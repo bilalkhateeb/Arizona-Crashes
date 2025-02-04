@@ -134,15 +134,15 @@ body {
 }
 </style>
 
-<!-- Navigation Bar -->
+<!-- Navigation Bar
 <div class="navbar">
   <a href="/">🏠 Home</a>
-  <a href="/map.md">🗺️ Map</a>
+  <a href="map">🗺️ Map</a>
   <a href="Barchart">📊 Bar Chart</a>
-  <a href=".ConnectedScatter">📈 Connected Scatter</a>
+  <a href="ConnectedScatter">📈 Connected Scatter</a>
   <a href="Ridgeline">📉 Ridgeline</a>
   <a href="Heatmap">🔥 Heatmap</a>
-</div>
+</div> -->
 
 <div class="hero">
   <h1>Crash Trends in Arizona</h1>
