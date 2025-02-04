@@ -70,62 +70,68 @@ import "./_observablehq/client.90be1c3d.js";
 <h2 id="test-2-console-log-first-5-rows-of-arizona-county-crashes" tabindex="-1"><a class="observablehq-header-anchor" href="#test-2-console-log-first-5-rows-of-arizona-county-crashes">📋 <strong>Test 2: Console Log First 5 Rows of "Arizona County Crashes"</strong></a></h2>
 <p>This test will <strong>attempt multiple ways</strong> to load <strong>docs/data/Arizona county crashes.csv</strong> and log the first 5 rows in the browser console.</p>
 <script type="module">
-  async function loadCsvData() {
-    console.log("📌 Starting CSV file load test...");
+async function loadCsvData() {
+  console.log("📌 Starting CSV file load test...");
 
-    // Possible file locations for testing
-    const csvUrls = [
-      "./data/Arizona county crashes.csv", // ✅ Relative path (GitHub Pages)
-      "data/Arizona county crashes.csv", // ✅ Relative path (local testing)
-      "_data/Arizona county crashes.csv",
-      "https://bilalkhateeb.github.io/Arizona-Crashes/data/Arizona county crashes.csv", // ✅ Absolute URL (GitHub Pages)
-    ];
+  const csvUrls = [
+    "./_file/Arizona_county_crashes.csv",
+    "_file/Arizona_county_crashes.csv",
+    "/_file/Arizona_county_crashes.csv",
+    "https://bilalkhateeb.github.io/Arizona-Crashes/_file/Arizona_county_crashes.csv",
 
-    let csvData = null;
+    "./data/Arizona_county_crashes.csv",
+    "data/Arizona_county_crashes.csv",
+    "/data/Arizona_county_crashes.csv",
+    "https://bilalkhateeb.github.io/Arizona-Crashes/data/Arizona_county_crashes.csv",
 
-    for (const csvUrl of csvUrls) {
-      try {
-        console.log(`🔍 Trying: ${csvUrl}`);
+    "https://raw.githubusercontent.com/bilalkhateeb/Arizona-Crashes/main/docs/data/Arizona_county_crashes.csv",
+    "https://raw.githubusercontent.com/bilalkhateeb/Arizona-Crashes/main/docs/_file/Arizona_county_crashes.csv",
 
-        // Fetch CSV file
-        const response = await fetch(csvUrl);
-        if (!response.ok) throw new Error(`❌ Failed to load: ${csvUrl} (Status: ${response.status})`);
+    // Trying "Arizone.csv" (new name)
+    "./_file/Arizone.csv",
+    "_file/Arizone.csv",
+    "/_file/Arizone.csv",
+    "https://bilalkhateeb.github.io/Arizona-Crashes/_file/Arizone.csv",
 
-        // Read text content
-        const csvText = await response.text();
+    "./data/Arizone.csv",
+    "data/Arizone.csv",
+    "/data/Arizone.csv",
+    "https://bilalkhateeb.github.io/Arizona-Crashes/data/Arizone.csv",
 
-        // Parse CSV into an array of objects
-        csvData = csvText.split("\n").map(row => row.split(","));
-        console.log(`✅ Successfully loaded CSV from: ${csvUrl}`);
+    "https://raw.githubusercontent.com/bilalkhateeb/Arizona-Crashes/main/docs/data/Arizone.csv",
+    "https://raw.githubusercontent.com/bilalkhateeb/Arizona-Crashes/main/docs/_file/Arizone.csv"
+  ];
 
-        // Break loop if data loaded
-        break; 
-      } catch (error) {
-        console.warn(error.message);
-      }
+  let csvData = null;
+
+  for (const csvUrl of csvUrls) {
+    try {
+      console.log(`🔍 Trying: ${csvUrl}`);
+
+      const response = await fetch(csvUrl);
+      if (!response.ok) throw new Error(`❌ Failed to load: ${csvUrl} (Status: ${response.status})`);
+
+      const csvText = await response.text();
+
+      csvData = csvText.split("\n").map(row => row.split(","));
+      console.log(`✅ Successfully loaded CSV from: ${csvUrl}`);
+
+      break; // Stop trying if successful
+    } catch (error) {
+      console.warn(error.message);
     }
-
-    // If all attempts fail
-    if (!csvData) {
-      console.error("🚨 ERROR: All CSV load attempts failed! Check file path.");
-      return;
-    }
-
-    // Extract headers
-    const headers = csvData[0];
-
-    // Convert CSV array to an array of objects
-    const dataObjects = csvData.slice(1, 6).map(row => {
-      let obj = {};
-      row.forEach((value, index) => obj[headers[index]] = value);
-      return obj;
-    });
-
-    // Log first 5 rows
-    console.log("📊 First 5 rows of CSV:", dataObjects);
   }
 
-  loadCsvData();
+  if (!csvData) {
+    console.error("🚨 ERROR: All CSV load attempts failed! Check file path.");
+    return;
+  }
+
+  console.log("📊 First 5 rows of CSV:", csvData.slice(0, 6)); // Print headers + first 5 rows
+}
+
+loadCsvData();
+
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap');
@@ -276,7 +282,7 @@ body {
 </main>
 <footer id="observablehq-footer">
 <nav><a rel="next" href="./map"><span>Map</span></a></nav>
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T18:42:39">Feb 4, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T18:51:49">Feb 4, 2025</a>.</div>
 </footer>
 </div>
 </body>
