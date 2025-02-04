@@ -1,64 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="generator" content="Observable Framework v1.13.2">
-<title>Arizona County Crash Map | Arizona Crash Report</title>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_observablehq/theme-near-midnight.d49e655d.css">
-<link rel="preload" as="style" href="./_npm/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_observablehq/theme-near-midnight.d49e655d.css">
-<link rel="stylesheet" type="text/css" href="./_npm/leaflet@1.9.4/dist/leaflet.css">
-<link rel="modulepreload" href="./_observablehq/client.010ab10e.js">
-<link rel="modulepreload" href="./_observablehq/runtime.f168f711.js">
-<link rel="modulepreload" href="./_observablehq/stdlib.a7574edc.js">
-<link rel="modulepreload" href="./_npm/d3@7.9.0/159192fa.js">
-<link rel="modulepreload" href="./_npm/htl@0.3.1/063eb405.js">
-<link rel="modulepreload" href="./_npm/leaflet@1.9.4/82e0844d.js">
-<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/407f7a1f.js">
-<link rel="modulepreload" href="./_npm/d3-array@3.2.4/37839b6a.js">
-<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/bd0afa17.js">
-<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/6495590f.js">
-<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/84d7b8e9.js">
-<link rel="modulepreload" href="./_npm/d3-color@3.1.0/2c0cdfa2.js">
-<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/d496a3b3.js">
-<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/00c41b5d.js">
-<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/b5f7cdc6.js">
-<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/ef06b1ff.js">
-<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/6f15f633.js">
-<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/35880c2a.js">
-<link rel="modulepreload" href="./_npm/d3-force@3.0.0/60bb70b3.js">
-<link rel="modulepreload" href="./_npm/d3-format@3.1.0/33fb7288.js">
-<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/5e427f4b.js">
-<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/f1db2593.js">
-<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/034b7bcb.js">
-<link rel="modulepreload" href="./_npm/d3-path@3.1.0/4bb53638.js">
-<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/bbafde58.js">
-<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/aa5b35a8.js">
-<link rel="modulepreload" href="./_npm/d3-random@3.0.1/32c7fec2.js">
-<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/2bb2815a.js">
-<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/b6952b03.js">
-<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/a4e530fb.js">
-<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/be692bd9.js">
-<link rel="modulepreload" href="./_npm/d3-time@3.1.0/3a9ac1c1.js">
-<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/28d1ef76.js">
-<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/f31b5398.js">
-<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/0c259fbf.js">
-<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/da4a6ccc.js">
-<link rel="modulepreload" href="./_npm/internmap@2.0.3/5eed35fd.js">
-<link rel="modulepreload" href="./_npm/delaunator@5.0.1/e67acb27.js">
-<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/8ac9039b.js">
-<script type="module">
+---
+title: "Arizona County Crash Map"
+theme: dark
+toc: false
+---
 
-import {define} from "./_observablehq/client.010ab10e.js";
-import {registerFile} from "./_observablehq/stdlib.a7574edc.js";
+# 📍 Arizona Crash Distribution by County
 
-registerFile("./data/Arizona county crashes.csv", {"name":"./data/Arizona county crashes.csv","mimeType":"text/csv","path":"./_file/data/Arizona county crashes.08230ab6.csv","lastModified":1738666257000,"size":14714});
+This interactive map displays **the number of crashes per county**, colored by crash density.
 
-define({id: "09d3db04", inputs: ["d3","L","FileAttachment"], outputs: ["arizonaFIPS","countyClassification","fixedDomainMin","fixedDomainMax","fixedLegendStops","getColorScale","getColor","map","loadCrashData","createCountyLayer","createGradientLegend","updateDonutChart"], body: (d3,L,FileAttachment) => {
+<!-- Load Leaflet from CDN -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://d3js.org/d3.v6.min.js"></script> <!-- Load D3 for color scaling -->
+
+<!-- Slider Container -->
+<div id="sliderContainer" style="max-width: 900px; height: 50px; margin: 0; display: flex; align-items: center; justify-content: center; gap: 20px; border-radius: 10px;">
+  <span style="font-size: 18px; font-weight: bold; color: white;">Select Year:</span>
+  <input type="range" id="yearRange" min="" max="" step="1" value="" style="width: 230px; height: 6.2px; accent-color: #4c8cff; margin: 0;">
+  <span id="yearDisplay" style="font-size: 18px; font-weight: bold; color: #fff;"></span>
+</div>
+
+<div id="container">
+  <!-- Map Container -->
+  <div id="MapArizona" style="width: 100%; height: 650px; margin-bottom: 50px;"></div>
+  <!-- Donut Chart Container -->
+  <div id="chartContainer">
+    <h3 id="chartTitle">
+      <span class="highlight-text">🔍 Select a County</span>  
+      <br>  
+      <span class="subtitle">to Explore Crash Insights</span>
+    </h3>   
+    <svg id="donutChart"></svg>
+    <div id="donutLegend"></div>
+  </div>
+</div>
+
+<!-- Legend Container -->
+<div id="legend"></div>
+
+```js
 // ===============================
 // Global Declarations & Configurations
 // ===============================
@@ -134,7 +114,7 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
 // ===============================
 async function loadCrashData() {
   const crashData = await FileAttachment(
-    "./data/Arizona county crashes.csv"
+    "data/Arizona county crashes.csv"
   ).csv({ typed: true });
   console.log("Crash Data Sample:", crashData.slice(0, 5));
 
@@ -399,12 +379,10 @@ function updateDonutChart(countyName, data) {
 // Initialize
 // ===============================
 loadCrashData();
-return {arizonaFIPS,countyClassification,fixedDomainMin,fixedDomainMax,fixedLegendStops,getColorScale,getColor,map,loadCrashData,createCountyLayer,createGradientLegend,updateDonutChart};
-}});
+```
 
-define({id: "bc2c499d", inputs: ["html","display"], body: async (html,display) => {
-display(await(
-html.fragment`<style>
+```html
+<style>
   /* Map and container styling */
   #MapArizona {
     width: 75%;
@@ -557,66 +535,5 @@ html.fragment`<style>
     bottom: 20px;
     z-index: 1000;
   }
-</style>`
-))
-}});
-
-</script>
-</head>
-<body>
-<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
-<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
-<nav id="observablehq-sidebar">
-  <ol>
-    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
-    <li class="observablehq-link"><a href="./">Arizona Crash Report</a></li>
-  </ol>
-  <ol>
-    <li class="observablehq-link"><a href="./index.md">Home</a></li>
-    <li class="observablehq-link"><a href="./map.md">Map</a></li>
-    <li class="observablehq-link"><a href="./Bar%20chart%20(small%20multiples).md">Bar Chart</a></li>
-    <li class="observablehq-link"><a href="./ConnectedScatter.md">Connected Scatter Plot</a></li>
-    <li class="observablehq-link"><a href="./Ridgeline.md">Ridgeline</a></li>
-    <li class="observablehq-link"><a href="./Heatmap.md">Heatmap</a></li>
-  </ol>
-</nav>
-<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
-<div id="observablehq-center">
-<main id="observablehq-main" class="observablehq">
-<h1 id="arizona-crash-distribution-by-county" tabindex="-1"><a class="observablehq-header-anchor" href="#arizona-crash-distribution-by-county">📍 Arizona Crash Distribution by County</a></h1>
-<p>This interactive map displays <strong>the number of crashes per county</strong>, colored by crash density.</p>
-<!-- Load Leaflet from CDN -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="https://d3js.org/d3.v6.min.js"></script> <!-- Load D3 for color scaling -->
-<!-- Slider Container -->
-<div id="sliderContainer" style="max-width: 900px; height: 50px; margin: 0; display: flex; align-items: center; justify-content: center; gap: 20px; border-radius: 10px;">
-  <span style="font-size: 18px; font-weight: bold; color: white;">Select Year:</span>
-  <input type="range" id="yearRange" min="" max="" step="1" value="" style="width: 230px; height: 6.2px; accent-color: #4c8cff; margin: 0;">
-  <span id="yearDisplay" style="font-size: 18px; font-weight: bold; color: #fff;"></span>
-</div>
-<div id="container">
-  <!-- Map Container -->
-  <div id="MapArizona" style="width: 100%; height: 650px; margin-bottom: 50px;"></div>
-  <!-- Donut Chart Container -->
-  <div id="chartContainer">
-    <h3 id="chartTitle"><a class="observablehq-header-anchor" href="#chartTitle">
-      <span class="highlight-text">🔍 Select a County</span>  
-      <br>  
-      <span class="subtitle">to Explore Crash Insights</span>
-    </a></h3>   
-    <svg id="donutChart"></svg>
-    <div id="donutLegend"></div>
-  </div>
-</div>
-<!-- Legend Container -->
-<div id="legend"></div>
-<div class="observablehq observablehq--block"><!--:09d3db04:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:bc2c499d:--></div>
-</main>
-<footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T14:12:01">Feb 4, 2025</a>.</div>
-</footer>
-</div>
-</body>
-</html>
+</style>
+```
