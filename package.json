@@ -1,0 +1,24 @@
+{
+  "name": "dv_arizona_crash_reports",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @observablehq/framework preview",
+    "build": "npx @observablehq/framework build",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@observablehq/framework": "^1.13.2",
+    "@observablehq/inputs": "^0.12.0",
+    "@observablehq/plot": "^0.6.16",
+    "@observablehq/stdlib": "^5.8.8",
+    "d3": "^7.9.0",
+    "topojson-client": "^3.1.0"
+  }
+}
