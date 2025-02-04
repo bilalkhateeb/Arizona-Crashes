@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.2">
+<title>Arizona County Crash Comparison | Arizona Crash Report</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-near-midnight.d49e655d.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-near-midnight.d49e655d.css">
+<link rel="modulepreload" href="./_observablehq/client.90be1c3d.js">
+<link rel="modulepreload" href="./_observablehq/runtime.f168f711.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.a7574edc.js">
+<link rel="modulepreload" href="./_node/@observablehq/plot@0.6.16/index.9b55ffb7.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/7055d4c5.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/063eb405.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/407f7a1f.js">
+<link rel="modulepreload" href="./_node/d3@7.9.0/index.53f82e1f.js">
+<link rel="modulepreload" href="./_node/isoformat@0.2.1/index.0882e9d9.js">
+<link rel="modulepreload" href="./_node/interval-tree-1d@1.0.4/index.18b49a7e.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e95f898e.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/d44feff9.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/5830b12a.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/84d7b8e9.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/2c0cdfa2.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/626bedc4.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/00c41b5d.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/b5f7cdc6.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/b22c5864.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/6f15f633.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/ef1ec490.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e1ff060.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/5851d7ef.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/dcd02767.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/f1db2593.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/034b7bcb.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/4bb53638.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/bbafde58.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/aa5b35a8.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/32c7fec2.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/567840a0.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/cf9b720b.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/5dcd62f4.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/f8e03c56.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/5bc129e1.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/19c92b44.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/f31b5398.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/8debb4ba.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/4b0cc581.js">
+<link rel="modulepreload" href="./_node/d3-array@3.2.4/index.b70e7922.js">
+<link rel="modulepreload" href="./_node/d3-axis@3.0.0/index.34ded868.js">
+<link rel="modulepreload" href="./_node/d3-brush@3.0.0/index.0d1ab9e9.js">
+<link rel="modulepreload" href="./_node/d3-chord@3.0.1/index.eb7a3f59.js">
+<link rel="modulepreload" href="./_node/d3-color@3.1.0/index.e8c126ff.js">
+<link rel="modulepreload" href="./_node/d3-contour@4.0.2/index.c2c2e765.js">
+<link rel="modulepreload" href="./_node/d3-delaunay@6.0.4/index.46144837.js">
+<link rel="modulepreload" href="./_node/d3-dispatch@3.0.1/index.be49ca5f.js">
+<link rel="modulepreload" href="./_node/d3-drag@3.0.0/index.b110a7c7.js">
+<link rel="modulepreload" href="./_node/d3-dsv@3.0.1/index.48418e2e.js">
+<link rel="modulepreload" href="./_node/d3-ease@3.0.1/index.09153f73.js">
+<link rel="modulepreload" href="./_node/d3-fetch@3.0.1/index.089dc2e0.js">
+<link rel="modulepreload" href="./_node/d3-force@3.0.0/index.a53c353f.js">
+<link rel="modulepreload" href="./_node/d3-format@3.1.0/index.913a01e3.js">
+<link rel="modulepreload" href="./_node/d3-geo@3.1.1/index.94773a7e.js">
+<link rel="modulepreload" href="./_node/d3-hierarchy@3.1.2/index.7d9b63a7.js">
+<link rel="modulepreload" href="./_node/d3-interpolate@3.0.1/index.3b07c751.js">
+<link rel="modulepreload" href="./_node/d3-path@3.1.0/index.c2b3c473.js">
+<link rel="modulepreload" href="./_node/d3-polygon@3.0.1/index.32c3d834.js">
+<link rel="modulepreload" href="./_node/d3-quadtree@3.0.1/index.e9fed2eb.js">
+<link rel="modulepreload" href="./_node/d3-random@3.0.1/index.fd2cc361.js">
+<link rel="modulepreload" href="./_node/d3-scale@4.0.2/index.9802f328.js">
+<link rel="modulepreload" href="./_node/d3-scale-chromatic@3.1.0/index.05a6a5dd.js">
+<link rel="modulepreload" href="./_node/d3-selection@3.0.0/index.31e0394d.js">
+<link rel="modulepreload" href="./_node/d3-shape@3.2.0/index.688fc497.js">
+<link rel="modulepreload" href="./_node/d3-time@3.1.0/index.ae6ab93d.js">
+<link rel="modulepreload" href="./_node/d3-time-format@4.1.0/index.4b8e4965.js">
+<link rel="modulepreload" href="./_node/d3-timer@3.0.1/index.5ac82948.js">
+<link rel="modulepreload" href="./_node/d3-transition@3.0.1/index.2448c0da.js">
+<link rel="modulepreload" href="./_node/d3-zoom@3.0.0/index.6b0a6cc1.js">
+<link rel="modulepreload" href="./_node/binary-search-bounds@2.0.5/index.add414e4.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/5eed35fd.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/e67acb27.js">
+<link rel="modulepreload" href="./_node/internmap@2.0.3/index.4106013c.js">
+<link rel="modulepreload" href="./_node/delaunator@5.0.1/index.70ae1478.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/8ac9039b.js">
+<link rel="modulepreload" href="./_node/robust-predicates@3.0.2/index.bdc459cc.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.90be1c3d.js";
+import {registerFile} from "./_observablehq/stdlib.a7574edc.js";
+
+registerFile("./data/Crashes by Hour and Day of Week.csv", {"name":"./data/Crashes by Hour and Day of Week.csv","mimeType":"text/csv","path":"./_file/data/Crashes by Hour and Day of Week.a0617e56.csv","lastModified":1738666257000,"size":57773});
+
+define({id: "52d88cc8", inputs: ["d3","FileAttachment"], outputs: ["Plot"], body: async (d3,FileAttachment) => {
+const Plot = await import("./_node/@observablehq/plot@0.6.16/index.9b55ffb7.js");
+// Import Plot from Observable (d3 is available globally)
+
+(async () => {
+  const app = document.getElementById("app");
+  app.innerHTML = ""; // Clear previous content
+
+  // Function to render/update the heatmap chart for a given year.
+  function renderHeatmap(selectedYear, csvData) {
+    // Dynamically calculate chart width (90% of window width, minimum 1000)
+    const chartWidth = Math.max(window.innerWidth * 0.9, 1000);
+
+    // Filter data for the selected year.
+    const filteredData = csvData.filter((d) => d.Year === Number(selectedYear));
+    
+    // Define the days of the week in order.
+    const days = [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ];
+
+    // Transform the data from wide to long format.
+    // For each row (each hour), create a record for each day.
+    const longData = [];
+    filteredData.forEach((d) => {
+      const hour = d["Hour Beginning"]; // e.g., "12:00 AM", "01:00 AM", etc.
+      days.forEach((day) => {
+        // Column name is assumed to be like "Monday All", "Tuesday All", etc.
+        const col = `${day} All`;
+        // Remove commas and convert to number.
+        const crashes =
+          typeof d[col] === "number" ? d[col] : +d[col].replace(/,/g, "");
+        longData.push({
+          hour,
+          day,
+          crashes,
+          title: `Hour: ${d["Hour Beginning"]}\nDay: ${day}\nCrashes: ${crashes}`,
+        });
+      });
+    });
+
+    // Create the heatmap using Plot.cell with band scales.
+    const chart = Plot.plot({
+      width: chartWidth,
+      height: 500,
+      background: "#111",
+      marginLeft: 140,
+      marginBottom: 110,
+      x: {
+        label: "Hour of Day",
+        type: "band",
+        tickRotate: -60,
+        domain: [...new Set(longData.map((d) => d.hour))],
+        padding: 0.05,
+        tickFormat: (d) => {
+          if (d === "12:00 AM") return "🌜";
+          if (d === "12:00 PM") return "☀️";
+          return d;
+        },
+        grid: true,
+        tickColor: "#888",
+        labelColor: "white",
+      },
+      y: {
+        label: "Day of Week",
+        type: "band",
+        domain: days,
+        padding: 0.05,
+        grid: true,
+        tickColor: "#888",
+        labelColor: "white",
+      },
+      color: {
+        label: "Crash Count",
+        // Change the color scheme to "reds" for a red sequential scale.
+        scheme: "reds",
+        zero: "#111",
+      },
+      marks: [
+        Plot.cell(longData, {
+          x: "hour",
+          y: "day",
+          fill: "crashes",
+          inset: 0,
+          title: (d) => d.title,
+        }),
+      ],
+      style: {
+        fontSize: "18px",
+        fontFamily: "sans-serif",
+        fontWeight: "bold",
+      },
+    });
+
+    // Clear previous chart and append the new one.
+    // We'll place the chart inside a dedicated container.
+    const chartContainer = document.getElementById("chartContainer");
+    chartContainer.innerHTML = "";
+    chartContainer.appendChild(chart);
+
+    // --- Interactive Projection Lines ---
+    // Select the SVG element rendered by Plot.
+    const svg = d3.select(chartContainer).select("svg");
+
+    // Function to add projection lines from a given cell.
+    function addProjectionLines(cell) {
+      // Get the bounding box of the hovered cell.
+      const bbox = cell.getBBox();
+      // Calculate the center of the cell.
+      const cx = bbox.x + bbox.width / 2;
+      const cy = bbox.y + bbox.height / 2;
+
+      // Use known chart dimensions (from Plot.plot configuration):
+      const chartHeight = 500;
+      const marginBottom = 110;
+      const marginLeft = 140;
+      const xAxisY = chartHeight - marginBottom; // should be 390
+      const yAxisX = marginLeft; // 140
+
+      // Append a vertical line from the cell center down to the x-axis.
+      svg
+        .append("line")
+        .attr("class", "hover-rule-x")
+        .attr("x1", cx)
+        .attr("x2", cx)
+        .attr("y1", cy)
+        .attr("y2", xAxisY)
+        .attr("stroke", "black")
+        .attr("stroke-width", 3)
+        .attr("stroke-dasharray", "0.7");
+
+      // Append a horizontal line from the cell center left to the y-axis.
+      svg
+        .append("line")
+        .attr("class", "hover-rule-y")
+        .attr("x1", cx)
+        .attr("x2", yAxisX)
+        .attr("y1", cy)
+        .attr("y2", cy)
+        .attr("stroke", "black")
+        .attr("stroke-width", 3)
+        .attr("stroke-dasharray", "0.7");
+    }
+
+    // Function to remove projection lines.
+    function removeProjectionLines() {
+      svg.selectAll(".hover-rule-x").remove();
+      svg.selectAll(".hover-rule-y").remove();
+    }
+
+    // Attach event listeners to each cell (rendered as <rect> elements).
+    svg
+      .selectAll("rect")
+      .on("mouseover", function (event, d) {
+        removeProjectionLines();
+        addProjectionLines(this);
+      })
+      .on("mouseout", function () {
+        removeProjectionLines();
+      });
+
+    // Define the stops for the legend (adjust as needed)
+    const stops = [0, 500, 1000, 1500, 2000];
+
+    // Build the HTML string for the color boxes.
+    let boxesHtml = "";
+    for (let i = 0; i < stops.length - 1; i++) {
+      // Use the midpoint of each interval for color mapping.
+      const midValue = (stops[i] + stops[i + 1]) / 2;
+      // Compute t in [0,1] based on the domain [0,1500]
+      const t = midValue / 1800;
+      const color = d3.interpolateReds(t);
+      boxesHtml += `<div class="legend-box" style="background: ${color};"></div>`;
+    }
+
+    // Build the HTML string for the labels.
+    let labelsHtml = stops.map((stop) => `<span>${stop}</span>`).join("");
+
+    // Create the legend container and assign the innerHTML using the built strings.
+    // We'll place the legend in its own container.
+    const legendContainer = document.getElementById("legendContainer");
+    legendContainer.innerHTML = `
+      <div class="legend-boxes">${boxesHtml}</div>
+      <div class="legend-labels">${labelsHtml}</div>
+    `;
+  }
+
+  // Load the CSV file "Crashes by Hour and Day of Week.csv"
+  const csvData = await FileAttachment("./data/Crashes by Hour and Day of Week.csv").csv({ typed: true });
+  if (!csvData || csvData.length === 0) {
+    app.innerHTML =
+      "<p style='color:red;'>No data loaded. Please check the CSV file attachment.</p>";
+    return;
+  }
+
+  // Extract unique years from the CSV data and sort them.
+  const uniqueYears = Array.from(new Set(csvData.map((d) => d.Year))).sort((a, b) => a - b);
+  if (uniqueYears.length === 0) {
+    app.innerHTML = "<p style='color:red;'>No year data found in the file.</p>";
+    return;
+  }
+
+  // Create the main container.
+  const container = document.createElement("div");
+  container.style.maxWidth = "1000px";
+  container.style.margin = "0 auto";
+  container.style.padding = "20px";
+  container.style.background = "#111";
+  container.style.borderRadius = "10px";
+  container.style.boxShadow = "2px 2px 10px rgba(0,0,0,0.5)";
+  container.style.textAlign = "center";
+
+  // 1. Create the slider container (year slider at the top).
+  const sliderContainer = document.createElement("div");
+  sliderContainer.style.marginBottom = "20px";
+  sliderContainer.innerHTML = `
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <span style="font-size: 16px; font-weight: bold; color: white;">Select Year:</span>
+      <input type="range" id="yearRange" min="${uniqueYears[0]}" max="${uniqueYears[uniqueYears.length - 1]}" step="1" value="${uniqueYears[uniqueYears.length - 1]}" style="width: 200px; height: 6px; accent-color: #4c8cff; margin: 0;">
+      <span id="yearDisplay" style="font-size: 16px; font-weight: bold; color: #fff;">${uniqueYears[uniqueYears.length - 1]}</span>
+    </div>
+  `;
+  container.appendChild(sliderContainer);
+
+  // 2. Create the container for the heatmap chart.
+  const chartContainer = document.createElement("div");
+  chartContainer.id = "chartContainer";
+  container.appendChild(chartContainer);
+
+  // 3. Create the container for the legend.
+  const legendContainer = document.createElement("div");
+  legendContainer.id = "legendContainer";
+  // Apply the custom-legend class for styling
+  legendContainer.className = "custom-legend";
+  container.appendChild(legendContainer);
+
+  // Append the main container to the app.
+  app.appendChild(container);
+
+  // Initialize the heatmap with the latest year.
+  renderHeatmap(uniqueYears[uniqueYears.length - 1], csvData);
+
+  // Set up the slider event listener.
+  const slider = document.getElementById("yearRange");
+  slider.addEventListener("input", function () {
+    document.getElementById("yearDisplay").textContent = this.value;
+    renderHeatmap(this.value, csvData);
+  });
+
+  // Re-render the chart when the window is resized.
+  window.addEventListener("resize", () => {
+    renderHeatmap(document.getElementById("yearRange").value, csvData);
+  });
+})();
+return {Plot};
+}});
+
+define({id: "9ab854b1", inputs: ["html","display"], body: async (html,display) => {
+display(await(
+html.fragment`<style>
+ /* Basic styling for the app container */
+#app {
+  width: 100%;
+  margin: 0 auto;
+  background: #111;
+  font-family: sans-serif;
+}
+
+/* Legend container styling */
+.custom-legend {
+  margin-top: 20px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px; /* Fixed width for the legend */
+}
+
+/* Container for the color boxes */
+.legend-boxes {
+  display: flex;
+  height: 30px;  /* Fixed unit without extra space */
+  width: 100%;
+}
+
+/* Each individual color box */
+.legend-box {
+  flex: 1;
+  height: 20px;
+}
+
+/* Container for the numerical labels below the boxes */
+.legend-labels {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 12px;
+  color: white;
+  margin-top: 5px;
+}
+</style>`
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Arizona Crash Report</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link"><a href="./">Home</a></li>
+    <li class="observablehq-link"><a href="./map">Map</a></li>
+    <li class="observablehq-link"><a href="./Barchart">Bar chart</a></li>
+    <li class="observablehq-link"><a href="./ConnectedScatter">ConnectedScatter plot</a></li>
+    <li class="observablehq-link"><a href="./Ridgeline">Ridgeline</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./Heatmap">Heatmap</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="visualization-5-crashes-by-hour-and-day-of-week" tabindex="-1"><a class="observablehq-header-anchor" href="#visualization-5-crashes-by-hour-and-day-of-week">🚗 Visualization 5: Crashes by Hour and Day of Week</a></h1>
+<p>This heatmap explores the correlation between car crashes per hour and days of the week for 2023. The color intensity (in red) represents the crash count.<br>
+Hover over a cell to see its crash count with projection lines to the axes.</p>
+<div id="app"></div>
+<div class="observablehq observablehq--block"><!--:52d88cc8:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:9ab854b1:--></div>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./Ridgeline"><span>Ridgeline</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T17:11:38">Feb 4, 2025</a>.</div>
+</footer>
+</div>
+</body>
+</html>
