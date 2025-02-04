@@ -10,12 +10,12 @@
 <link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
 <link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
-<link rel="modulepreload" href="./_observablehq/client.521f1fbf.js">
+<link rel="modulepreload" href="./_observablehq/client.010ab10e.js">
 <link rel="modulepreload" href="./_observablehq/runtime.f168f711.js">
-<link rel="modulepreload" href="./_observablehq/stdlib.ca738e5d.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.a7574edc.js">
 <script type="module">
 
-import "./_observablehq/client.521f1fbf.js";
+import "./_observablehq/client.010ab10e.js";
 
 </script>
 </head>
@@ -28,12 +28,12 @@ import "./_observablehq/client.521f1fbf.js";
     <li class="observablehq-link observablehq-link-active"><a href="./">Arizona Crash Report</a></li>
   </ol>
   <ol>
-    <li class="observablehq-link observablehq-link-active"><a href="./">Home</a></li>
-    <li class="observablehq-link"><a href="./map">Map</a></li>
-    <li class="observablehq-link"><a href="./Bar%20chart%20(small%20multiples)">Bar chart</a></li>
-    <li class="observablehq-link"><a href="./ConnectedScatter">ConnectedScatter plot</a></li>
-    <li class="observablehq-link"><a href="./Ridgeline">Ridgeline</a></li>
-    <li class="observablehq-link"><a href="./Heatmap">Heatmap</a></li>
+    <li class="observablehq-link"><a href="./index.md">Home</a></li>
+    <li class="observablehq-link"><a href="./map.md">Map</a></li>
+    <li class="observablehq-link"><a href="./Bar%20chart%20(small%20multiples).md">Bar Chart</a></li>
+    <li class="observablehq-link"><a href="./ConnectedScatter.md">Connected Scatter Plot</a></li>
+    <li class="observablehq-link"><a href="./Ridgeline.md">Ridgeline</a></li>
+    <li class="observablehq-link"><a href="./Heatmap.md">Heatmap</a></li>
   </ol>
 </nav>
 <script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
@@ -56,6 +56,34 @@ body {
   color: var(--text-color);
   font-family: "Poppins", Arial, sans-serif;
   text-align: center;
+}
+
+/* Navigation Menu */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.navbar a:hover {
+  background: var(--primary-color);
+  color: white;
 }
 
 /* Hero Section with Arizona Crash Image */
@@ -141,6 +169,15 @@ body {
   transform: scale(1.1);
 }
 </style>
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="./index.md">🏠 Home</a>
+  <a href="./map.md">🗺️ Map</a>
+  <a href="./Bar%20chart%20(small%20multiples).md">📊 Bar Chart</a>
+  <a href="./ConnectedScatter.md">📈 Connected Scatter</a>
+  <a href="./Ridgeline.md">📉 Ridgeline</a>
+  <a href="./Heatmap.md">🔥 Heatmap</a>
+</div>
 <div class="hero">
   <h1>Crash Trends in Arizona</h1>
   <h2>Data-Driven Insights for Arizona Roads</h2>
@@ -150,8 +187,8 @@ body {
 </div>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="next" href="./map"><span>Map</span></a></nav>
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T11:44:50">Feb 4, 2025</a>.</div>
+<nav><a rel="next" href="./index.md"><span>Home</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T14:12:01">Feb 4, 2025</a>.</div>
 </footer>
 </div>
 </body>

@@ -1,69 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="generator" content="Observable Framework v1.13.2">
-<title>Arizona County Crash Comparison | Arizona Crash Report</title>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_observablehq/theme-near-midnight.d49e655d.css">
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_observablehq/theme-near-midnight.d49e655d.css">
-<link rel="modulepreload" href="./_observablehq/client.010ab10e.js">
-<link rel="modulepreload" href="./_observablehq/runtime.f168f711.js">
-<link rel="modulepreload" href="./_observablehq/stdlib.a7574edc.js">
-<link rel="modulepreload" href="./_node/@observablehq/plot@0.6.16/index.6c000cbf.js">
-<link rel="modulepreload" href="./_npm/htl@0.3.1/063eb405.js">
-<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/407f7a1f.js">
-<link rel="modulepreload" href="./_node/d3@7.9.0/index.2d2666b1.js">
-<link rel="modulepreload" href="./_node/isoformat@0.2.1/index.0882e9d9.js">
-<link rel="modulepreload" href="./_node/interval-tree-1d@1.0.4/index.9ef81643.js">
-<link rel="modulepreload" href="./_node/d3-array@3.2.4/index.b70e7922.js">
-<link rel="modulepreload" href="./_node/d3-axis@3.0.0/index.34ded868.js">
-<link rel="modulepreload" href="./_node/d3-brush@3.0.0/index.0d1ab9e9.js">
-<link rel="modulepreload" href="./_node/d3-chord@3.0.1/index.eb7a3f59.js">
-<link rel="modulepreload" href="./_node/d3-color@3.1.0/index.e8c126ff.js">
-<link rel="modulepreload" href="./_node/d3-contour@4.0.2/index.cae1b2b9.js">
-<link rel="modulepreload" href="./_node/d3-delaunay@6.0.4/index.46144837.js">
-<link rel="modulepreload" href="./_node/d3-dispatch@3.0.1/index.be49ca5f.js">
-<link rel="modulepreload" href="./_node/d3-drag@3.0.0/index.b110a7c7.js">
-<link rel="modulepreload" href="./_node/d3-dsv@3.0.1/index.48418e2e.js">
-<link rel="modulepreload" href="./_node/d3-ease@3.0.1/index.09153f73.js">
-<link rel="modulepreload" href="./_node/d3-fetch@3.0.1/index.202d0ad8.js">
-<link rel="modulepreload" href="./_node/d3-force@3.0.0/index.a53c353f.js">
-<link rel="modulepreload" href="./_node/d3-format@3.1.0/index.913a01e3.js">
-<link rel="modulepreload" href="./_node/d3-geo@3.1.1/index.94773a7e.js">
-<link rel="modulepreload" href="./_node/d3-hierarchy@3.1.2/index.7d9b63a7.js">
-<link rel="modulepreload" href="./_node/d3-interpolate@3.0.1/index.3b07c751.js">
-<link rel="modulepreload" href="./_node/d3-path@3.1.0/index.c2b3c473.js">
-<link rel="modulepreload" href="./_node/d3-polygon@3.0.1/index.32c3d834.js">
-<link rel="modulepreload" href="./_node/d3-quadtree@3.0.1/index.e9fed2eb.js">
-<link rel="modulepreload" href="./_node/d3-random@3.0.1/index.fd2cc361.js">
-<link rel="modulepreload" href="./_node/d3-scale@4.0.2/index.c3fa53d0.js">
-<link rel="modulepreload" href="./_node/d3-scale-chromatic@3.1.0/index.05a6a5dd.js">
-<link rel="modulepreload" href="./_node/d3-selection@3.0.0/index.31e0394d.js">
-<link rel="modulepreload" href="./_node/d3-shape@3.2.0/index.688fc497.js">
-<link rel="modulepreload" href="./_node/d3-time@3.1.0/index.ae6ab93d.js">
-<link rel="modulepreload" href="./_node/d3-time-format@4.1.0/index.f32a4c93.js">
-<link rel="modulepreload" href="./_node/d3-timer@3.0.1/index.5ac82948.js">
-<link rel="modulepreload" href="./_node/d3-transition@3.0.1/index.2448c0da.js">
-<link rel="modulepreload" href="./_node/d3-zoom@3.0.0/index.c51eea87.js">
-<link rel="modulepreload" href="./_node/binary-search-bounds@2.0.5/index.132ad944.js">
-<link rel="modulepreload" href="./_node/internmap@2.0.3/index.4106013c.js">
-<link rel="modulepreload" href="./_node/delaunator@5.0.1/index.70ae1478.js">
-<link rel="modulepreload" href="./_node/robust-predicates@3.0.2/index.bdc459cc.js">
-<script type="module">
+---
+title: "Arizona County Crash Comparison"
+theme: dark
+toc: false
+---
 
-import {define} from "./_observablehq/client.010ab10e.js";
-import {registerFile} from "./_observablehq/stdlib.a7574edc.js";
+# 🚗 Visualization 4: Driver Involvement by Age in Crash Severity
 
-registerFile("./data/Driver Involvement by Age Alcohol-Related.csv", {"name":"./data/Driver Involvement by Age Alcohol-Related.csv","mimeType":"text/csv","path":"./_file/data/Driver Involvement by Age Alcohol-Related.f41b7459.csv","lastModified":1738666257000,"size":21675});
-registerFile("./data/Driver Involvement by Age.csv", {"name":"./data/Driver Involvement by Age.csv","mimeType":"text/csv","path":"./_file/data/Driver Involvement by Age.fa30be4a.csv","lastModified":1738666257000,"size":28651});
+This visualization lets you toggle between two views for 2023:
+- **Separate:** Three panels (PDO, Fatal, and Injury) are shown in separate graphs with a legend below.
+- **Overlap:** A single graph shows two overlapping ridgelines—one for PDO and one for (Fatal + Injury)—with its own legend.
 
-define({id: "eddc6ab0", inputs: ["FileAttachment"], outputs: ["Plot","globalData","selectedYear","main","toggleDiv","sliderDiv","chartsDiv","dataTypeCheckbox","selectControl","getAgeGroups","groupLabel","toNumber","aggregateDataByYear","createSeparateChart","createOverlapChart","loadDataAndRender","renderChart"], body: async (FileAttachment) => {
-const Plot = await import("./_node/@observablehq/plot@0.6.16/index.6c000cbf.js");
+Select a view below, then hover over a point for details.
+
+<div id="main"></div>
+
+```js
 // Import Plot from Observable (d3 is available globally)
+import * as Plot from "@observablehq/plot";
 
 // Global state variables
 let globalData = null;
@@ -511,9 +464,9 @@ async function loadDataAndRender() {
   const dataType = dataTypeCheckbox.checked ? "Alcohol" : "All";
   console.log("Loading data for:", dataType);
   if (dataType === "Alcohol") {
-    globalData = await FileAttachment("./data/Driver Involvement by Age Alcohol-Related.csv").csv({ typed: true });
+    globalData = await FileAttachment("data/Driver Involvement by Age Alcohol-Related.csv").csv({ typed: true });
   } else {
-    globalData = await FileAttachment("./data/Driver Involvement by Age.csv").csv({ typed: true });
+    globalData = await FileAttachment("data/Driver Involvement by Age.csv").csv({ typed: true });
   }
   if (!globalData || globalData.length === 0) {
     document.getElementById("main").innerHTML =
@@ -573,12 +526,10 @@ async function renderChart(viewMode, year) {
   chartsDiv.appendChild(chartDiv);
 }
 
-return {Plot,globalData,selectedYear,main,toggleDiv,sliderDiv,chartsDiv,dataTypeCheckbox,selectControl,getAgeGroups,groupLabel,toNumber,aggregateDataByYear,createSeparateChart,createOverlapChart,loadDataAndRender,renderChart};
-}});
+```
 
-define({id: "20335742", inputs: ["html","display"], body: async (html,display) => {
-display(await(
-html.fragment`<style>
+```html
+<style>
   /* Main container styling */
   #main {
     width: 90%;
@@ -683,46 +634,5 @@ html.fragment`<style>
     cursor: pointer;
   }
 </style>
-`
-))
-}});
 
-</script>
-</head>
-<body>
-<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
-<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
-<nav id="observablehq-sidebar">
-  <ol>
-    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
-    <li class="observablehq-link"><a href="./">Arizona Crash Report</a></li>
-  </ol>
-  <ol>
-    <li class="observablehq-link"><a href="./index.md">Home</a></li>
-    <li class="observablehq-link"><a href="./map.md">Map</a></li>
-    <li class="observablehq-link"><a href="./Bar%20chart%20(small%20multiples).md">Bar Chart</a></li>
-    <li class="observablehq-link"><a href="./ConnectedScatter.md">Connected Scatter Plot</a></li>
-    <li class="observablehq-link"><a href="./Ridgeline.md">Ridgeline</a></li>
-    <li class="observablehq-link"><a href="./Heatmap.md">Heatmap</a></li>
-  </ol>
-</nav>
-<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
-<div id="observablehq-center">
-<main id="observablehq-main" class="observablehq">
-<h1 id="visualization-4-driver-involvement-by-age-in-crash-severity" tabindex="-1"><a class="observablehq-header-anchor" href="#visualization-4-driver-involvement-by-age-in-crash-severity">🚗 Visualization 4: Driver Involvement by Age in Crash Severity</a></h1>
-<p>This visualization lets you toggle between two views for 2023:</p>
-<ul>
-<li><strong>Separate:</strong> Three panels (PDO, Fatal, and Injury) are shown in separate graphs with a legend below.</li>
-<li><strong>Overlap:</strong> A single graph shows two overlapping ridgelines—one for PDO and one for (Fatal + Injury)—with its own legend.</li>
-</ul>
-<p>Select a view below, then hover over a point for details.</p>
-<div id="main"></div>
-<div class="observablehq observablehq--block"><!--:eddc6ab0:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:20335742:--></div>
-</main>
-<footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T14:12:01">Feb 4, 2025</a>.</div>
-</footer>
-</div>
-</body>
-</html>
+```
