@@ -19,5 +19,5 @@ export default {
     { name: "Ridgeline", path: "Ridgeline" },
     { name: "Heatmap", path: "Heatmap" }
   ]
-};ds
+};
 
