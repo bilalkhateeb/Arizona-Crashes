@@ -58,6 +58,22 @@ This is a test visualization using **Observable Plot** to check if the library l
 
 This test will attempt to load your CSV file using **d3.csv** and print the first five rows to the browser console.
 
+```js
+  import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
+
+async function loadData() {
+  try {
+    const data = await FileAttachment("data/Arizona county crashes.csv").csv({ typed: true });
+    console.log("CSV data loaded:", data);
+    return data;
+  } catch (e) {
+    console.error("Error loading CSV file:", e);
+    return [];
+  }
+}
+loadData();
+```
+
 <script type="module">
   import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
 
@@ -71,7 +87,7 @@ async function loadData() {
     return [];
   }
 }
-loadData()
+loadData();
 </script>
 
 ## Custom Styling
