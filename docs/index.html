@@ -70,44 +70,30 @@ import "./_observablehq/client.90be1c3d.js";
 <h2 id="test-2-console-log-first-5-rows-of-arizona-county-crashes" tabindex="-1"><a class="observablehq-header-anchor" href="#test-2-console-log-first-5-rows-of-arizona-county-crashes">📋 <strong>Test 2: Console Log First 5 Rows of "Arizona County Crashes"</strong></a></h2>
 <p>This test will <strong>attempt multiple ways</strong> to load <strong>docs/data/Arizona county crashes.csv</strong> and log the first 5 rows in the browser console.</p>
 <script type="module">
-import { csv } from "https://cdn.jsdelivr.net/npm/d3-fetch@3/+esm";
+import { FileAttachment } from "https://cdn.jsdelivr.net/npm/@observablehq/stdlib@5/+esm";
 
-const possibleUrls = [
-  "./docs/data/Arizona.csv",
-  "docs/data/Arizona.csv",
-  "/docs/data/Arizona.csv",
-  "./data/Arizona.csv",
-  "data/Arizona.csv",
-  "/data/Arizona.csv",
-  "https://bilalkhateeb.github.io/Arizona-Crashes/docs/data/Arizona.csv",
-  "https://bilalkhateeb.github.io/Arizona-Crashes/data/Arizona.csv",
-  "https://raw.githubusercontent.com/bilalkhateeb/Arizona-Crashes/main/docs/data/Arizona.csv",
-  "https://raw.githubusercontent.com/bilalkhateeb/Arizona-Crashes/main/data/Arizona.csv"
-];
+async function loadData() {
+  try {
+    console.log("📌 Attempting to load CSV file using FileAttachment...");
 
-async function loadCsvData() {
-  console.log("📌 Starting CSV file load test...");
+    // Load CSV file using FileAttachment method
+    const data = await FileAttachment("_file/data/Arizona county crashes.csv").csv({ typed: true });
 
-  for (const url of possibleUrls) {
-    console.log(`🔍 Trying: ${url}`);
-
-    try {
-      const data = await csv(url);
-      
-      if (data.length > 0) {
-        console.log(`✅ Success! Loaded ${data.length} rows.`);
-        console.table(data.slice(0, 5)); // Print first 5 rows
-        return;
-      }
-    } catch (error) {
-      console.error(`❌ Failed to load: ${url}`, error);
+    if (!data || data.length === 0) {
+      return;
     }
-  }
 
-  console.error("🚨 ERROR: All CSV load attempts failed! Check file path.");
+    console.log("✅ CSV file loaded successfully!");
+    console.log("🔹 First 5 rows:", data.slice(0, 5)); // Log first 5 rows
+
+  } catch (e) {
+    console.error("🚨 Error loading CSV file:", e);
+  }
 }
 
-loadCsvData();
+// Call the function to load and log the data
+loadData();
+
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap');
@@ -258,7 +244,7 @@ body {
 </main>
 <footer id="observablehq-footer">
 <nav><a rel="next" href="./map"><span>Map</span></a></nav>
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T19:19:35">Feb 4, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T19:29:54">Feb 4, 2025</a>.</div>
 </footer>
 </div>
 </body>
