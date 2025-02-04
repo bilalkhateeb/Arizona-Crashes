@@ -53,7 +53,7 @@ body {
 /* Hero Section with Arizona Crash Image */
 .hero {
   padding: 5rem 0;
-  background-image: url("data/accident.jpg");
+  background-image: url("accident");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -136,12 +136,12 @@ body {
 
 <!-- Navigation Bar -->
 <div class="navbar">
-  <a href="index.md">🏠 Home</a>
-  <a href="./map.md">🗺️ Map</a>
-  <a href="docs/Bar%20chart%20(small%20multiples).md">📊 Bar Chart</a>
-  <a href="/ConnectedScatter.md">📈 Connected Scatter</a>
-  <a href="/docs/Ridgeline.md">📉 Ridgeline</a>
-  <a href="Heatmap.md">🔥 Heatmap</a>
+  <a href="/">🏠 Home</a>
+  <a href="/map">🗺️ Map</a>
+  <a href="Bar%20chart%20(small%20multiples)">📊 Bar Chart</a>
+  <a href="ConnectedScatter">📈 Connected Scatter</a>
+  <a href="Ridgeline">📉 Ridgeline</a>
+  <a href="Heatmap">🔥 Heatmap</a>
 </div>
 
 <div class="hero">
