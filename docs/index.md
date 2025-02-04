@@ -22,6 +22,34 @@ body {
   text-align: center;
 }
 
+/* Navigation Menu */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.navbar a:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
 /* Hero Section with Arizona Crash Image */
 .hero {
   padding: 5rem 0;
@@ -105,6 +133,16 @@ body {
   transform: scale(1.1);
 }
 </style>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="index.md">🏠 Home</a>
+  <a href="map.md">🗺️ Map</a>
+  <a href="Bar%20chart%20(small%20multiples).md">📊 Bar Chart</a>
+  <a href="ConnectedScatter.md">📈 Connected Scatter</a>
+  <a href="Ridgeline.md">📉 Ridgeline</a>
+  <a href="Heatmap.md">🔥 Heatmap</a>
+</div>
 
 <div class="hero">
   <h1>Crash Trends in Arizona</h1>
