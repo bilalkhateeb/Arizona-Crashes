@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.2">
+<title>Arizona County Crash Comparison | Arizona Crash Report</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-near-midnight.d49e655d.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-near-midnight.d49e655d.css">
+<link rel="modulepreload" href="./_observablehq/client.90be1c3d.js">
+<link rel="modulepreload" href="./_observablehq/runtime.f168f711.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.a7574edc.js">
+<link rel="modulepreload" href="./_node/@observablehq/plot@0.6.16/index.9b55ffb7.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/7055d4c5.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/063eb405.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/407f7a1f.js">
+<link rel="modulepreload" href="./_node/d3@7.9.0/index.53f82e1f.js">
+<link rel="modulepreload" href="./_node/isoformat@0.2.1/index.0882e9d9.js">
+<link rel="modulepreload" href="./_node/interval-tree-1d@1.0.4/index.18b49a7e.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e95f898e.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/d44feff9.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/5830b12a.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/84d7b8e9.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/2c0cdfa2.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/626bedc4.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/00c41b5d.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/b5f7cdc6.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/b22c5864.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/6f15f633.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/ef1ec490.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e1ff060.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/5851d7ef.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/dcd02767.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/f1db2593.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/034b7bcb.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/4bb53638.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/bbafde58.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/aa5b35a8.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/32c7fec2.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/567840a0.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/cf9b720b.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/5dcd62f4.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/f8e03c56.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/5bc129e1.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/19c92b44.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/f31b5398.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/8debb4ba.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/4b0cc581.js">
+<link rel="modulepreload" href="./_node/d3-array@3.2.4/index.b70e7922.js">
+<link rel="modulepreload" href="./_node/d3-axis@3.0.0/index.34ded868.js">
+<link rel="modulepreload" href="./_node/d3-brush@3.0.0/index.0d1ab9e9.js">
+<link rel="modulepreload" href="./_node/d3-chord@3.0.1/index.eb7a3f59.js">
+<link rel="modulepreload" href="./_node/d3-color@3.1.0/index.e8c126ff.js">
+<link rel="modulepreload" href="./_node/d3-contour@4.0.2/index.c2c2e765.js">
+<link rel="modulepreload" href="./_node/d3-delaunay@6.0.4/index.46144837.js">
+<link rel="modulepreload" href="./_node/d3-dispatch@3.0.1/index.be49ca5f.js">
+<link rel="modulepreload" href="./_node/d3-drag@3.0.0/index.b110a7c7.js">
+<link rel="modulepreload" href="./_node/d3-dsv@3.0.1/index.48418e2e.js">
+<link rel="modulepreload" href="./_node/d3-ease@3.0.1/index.09153f73.js">
+<link rel="modulepreload" href="./_node/d3-fetch@3.0.1/index.089dc2e0.js">
+<link rel="modulepreload" href="./_node/d3-force@3.0.0/index.a53c353f.js">
+<link rel="modulepreload" href="./_node/d3-format@3.1.0/index.913a01e3.js">
+<link rel="modulepreload" href="./_node/d3-geo@3.1.1/index.94773a7e.js">
+<link rel="modulepreload" href="./_node/d3-hierarchy@3.1.2/index.7d9b63a7.js">
+<link rel="modulepreload" href="./_node/d3-interpolate@3.0.1/index.3b07c751.js">
+<link rel="modulepreload" href="./_node/d3-path@3.1.0/index.c2b3c473.js">
+<link rel="modulepreload" href="./_node/d3-polygon@3.0.1/index.32c3d834.js">
+<link rel="modulepreload" href="./_node/d3-quadtree@3.0.1/index.e9fed2eb.js">
+<link rel="modulepreload" href="./_node/d3-random@3.0.1/index.fd2cc361.js">
+<link rel="modulepreload" href="./_node/d3-scale@4.0.2/index.9802f328.js">
+<link rel="modulepreload" href="./_node/d3-scale-chromatic@3.1.0/index.05a6a5dd.js">
+<link rel="modulepreload" href="./_node/d3-selection@3.0.0/index.31e0394d.js">
+<link rel="modulepreload" href="./_node/d3-shape@3.2.0/index.688fc497.js">
+<link rel="modulepreload" href="./_node/d3-time@3.1.0/index.ae6ab93d.js">
+<link rel="modulepreload" href="./_node/d3-time-format@4.1.0/index.4b8e4965.js">
+<link rel="modulepreload" href="./_node/d3-timer@3.0.1/index.5ac82948.js">
+<link rel="modulepreload" href="./_node/d3-transition@3.0.1/index.2448c0da.js">
+<link rel="modulepreload" href="./_node/d3-zoom@3.0.0/index.6b0a6cc1.js">
+<link rel="modulepreload" href="./_node/binary-search-bounds@2.0.5/index.add414e4.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/5eed35fd.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/e67acb27.js">
+<link rel="modulepreload" href="./_node/internmap@2.0.3/index.4106013c.js">
+<link rel="modulepreload" href="./_node/delaunator@5.0.1/index.70ae1478.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/8ac9039b.js">
+<link rel="modulepreload" href="./_node/robust-predicates@3.0.2/index.bdc459cc.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.90be1c3d.js";
+import {registerFile} from "./_observablehq/stdlib.a7574edc.js";
+
+registerFile("./data/Licensed drivers and registered vehicles.csv", {"name":"./data/Licensed drivers and registered vehicles.csv","mimeType":"text/csv","path":"./_file/data/Licensed drivers and registered vehicles.6ea289f3.csv","lastModified":1738666257000,"size":1645});
+
+define({id: "f33d0de0", inputs: ["FileAttachment","d3"], outputs: ["Plot"], body: async (FileAttachment,d3) => {
+const Plot = await import("./_node/@observablehq/plot@0.6.16/index.9b55ffb7.js");
+// Import Plot from Observable (d3 is available globally)
+
+(async () => {
+  const app = document.getElementById("app");
+  app.innerHTML = ""; // Clear previous content
+
+  // Load the CSV file.
+  const data = await FileAttachment(
+    "./data/Licensed drivers and registered vehicles.csv"
+  ).csv({ typed: true });
+  if (!data || data.length === 0) {
+    app.innerHTML =
+      "<p style='color:red;'>No data loaded. Please check the CSV file attachment.</p>";
+    return;
+  }
+
+  // Create a container for the visualization.
+  const container = document.createElement("div");
+  container.className = "vis-container";
+
+  // Create a toggle container for the two checkboxes.
+  const toggleContainer = document.createElement("div");
+  toggleContainer.className = "toggle-container";
+
+  // Create checkbox for Licensed Drivers.
+  const checkboxLicensed = document.createElement("input");
+  checkboxLicensed.type = "checkbox";
+  checkboxLicensed.className = "toggle-checkbox";
+  checkboxLicensed.checked = true; // default checked
+
+  const labelLicensed = document.createElement("span");
+  labelLicensed.className = "toggle-label";
+  labelLicensed.textContent = "Licensed Drivers";
+
+  // Create checkbox for Registered Vehicles.
+  const checkboxRegistered = document.createElement("input");
+  checkboxRegistered.type = "checkbox";
+  checkboxRegistered.className = "toggle-checkbox";
+  checkboxRegistered.checked = false; // default unchecked
+
+  const labelRegistered = document.createElement("span");
+  labelRegistered.className = "toggle-label";
+  labelRegistered.textContent = "Registered Vehicles";
+
+  // Append the checkboxes and labels to the toggle container.
+  toggleContainer.appendChild(checkboxLicensed);
+  toggleContainer.appendChild(labelLicensed);
+  toggleContainer.appendChild(checkboxRegistered);
+  toggleContainer.appendChild(labelRegistered);
+
+  container.appendChild(toggleContainer);
+
+  // Create a div to hold the chart.
+  const chartDiv = document.createElement("div");
+  container.appendChild(chartDiv);
+
+  // Append the container to the #app element.
+  app.appendChild(container);
+
+  // Helper function to get the currently selected variable.
+  function getSelectedVariable() {
+    if (checkboxLicensed.checked) return "Total Licensed Drivers";
+    if (checkboxRegistered.checked) return "Total Registered Vehicles";
+    return "Total Licensed Drivers";
+  }
+
+  // Render the chart based on the selected variable.
+  function renderChart() {
+    const variable = getSelectedVariable();
+    chartDiv.innerHTML = ""; // Clear any previous chart
+
+    // Compute the chart width based on the container.
+    const chartWidth = container.clientWidth;
+
+    const chart = Plot.plot({
+      width: chartWidth,
+      height: 520,
+      background: "#111",
+      marginBottom: 70,
+      marginTop: 50,
+      marginLeft: 60,
+      marginRight: 25,
+      x: {
+        label: variable,
+        labelOffset: 60,
+        tickFormat: (d) => d3.format(".2s")(d),
+        ticks: 7,
+        tickSize: 15,
+        nice: true,
+        grid: true,
+        tickColor: "#888",
+        labelColor: "white",
+      },
+      y: {
+        label: "Total Crashes",
+        labelOffset: 30,
+        tickFormat: (d) => d3.format(".2s")(d),
+        ticks: 7,
+        tickSize: 12,
+        nice: true,
+        grid: true,
+        tickColor: "#888",
+        labelColor: "white",
+      },
+      marks: [
+        // Line connecting data points.
+        Plot.line(data, {
+          x: (d) => d[variable],
+          y: "Total Crashes",
+          stroke: variable === "Total Licensed Drivers" ? "#4c8cff" : "#ff4c4c",
+          strokeWidth: 2,
+          curve: "linear",
+        }),
+        // Dots at each data point.
+        Plot.dot(data, {
+          x: (d) => d[variable],
+          y: "Total Crashes",
+          fill: variable === "Total Licensed Drivers" ? "#4c8cff" : "#ff4c4c",
+          r: 6,
+          stroke: "white",
+          strokeWidth: 1,
+          title: (d) =>
+            `Year: ${d.Year}\n${variable}: ${d3.format(",")(
+              d[variable]
+            )}\nTotal Crashes: ${d3.format(",")(d["Total Crashes"])}`,
+        }),
+        // Optional annotation for the year 2020.
+        Plot.text(
+          data.filter((d) => d.Year === 2020),
+          {
+            x: (d) => d[variable],
+            y: "Total Crashes",
+            text: (d) => "COVID-19",
+            dx: 5,
+            dy: -40,
+            fill: "white",
+            fontSize: 14,
+            fontWeight: "bold",
+          }
+        ),
+        // --- Year labels next to point ---
+        Plot.text(
+          data.filter((d, i) => i % 3 === 0), // Only every third point gets a label
+          {
+            x: (d) => d[variable],
+            y: "Total Crashes",
+            text: (d) => d.Year,
+            dx: -22,
+            dy: -10,
+            textAnchor: "top",
+            fontSize: 12,
+            fill: "white",
+          }
+        ),
+      ],
+      style: {
+        fontSize: "17px",
+        fontFamily: "sans-serif",
+      },
+    });
+
+    chartDiv.innerHTML = "";
+    chartDiv.appendChild(chart);
+  }
+
+  // Enforce mutually exclusive checkbox behavior.
+  checkboxLicensed.addEventListener("change", () => {
+    if (checkboxLicensed.checked) {
+      checkboxRegistered.checked = false;
+    } else {
+      if (!checkboxRegistered.checked) {
+        checkboxLicensed.checked = true;
+      }
+    }
+    renderChart();
+  });
+
+  checkboxRegistered.addEventListener("change", () => {
+    if (checkboxRegistered.checked) {
+      checkboxLicensed.checked = false;
+    } else {
+      if (!checkboxLicensed.checked) {
+        checkboxRegistered.checked = true;
+      }
+    }
+    renderChart();
+  });
+
+  // Initially render the chart.
+  renderChart();
+
+  // Listen for window resize events and re-render the chart.
+  window.addEventListener("resize", renderChart);
+})();
+return {Plot};
+}});
+
+define({id: "5bd8d23c", inputs: ["html","display"], body: async (html,display) => {
+display(await(
+html.fragment`<style>
+  /* Basic styling for the app container */
+  #app {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: sans-serif;
+    background: #111;
+  }
+  /* Center the visualization container */
+  .vis-container {
+    text-align: center;
+  }
+  /* Style for the toggle container */
+  .toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  /* Style for each checkbox */
+  .toggle-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+  /* Style for the toggle labels */
+  .toggle-label {
+    font-size: 16px;
+    color: white;
+  }
+</style>`
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Arizona Crash Report</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link"><a href="./">Home</a></li>
+    <li class="observablehq-link"><a href="./map">Map</a></li>
+    <li class="observablehq-link"><a href="./Barchart">Bar chart</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./ConnectedScatter">ConnectedScatter plot</a></li>
+    <li class="observablehq-link"><a href="./Ridgeline">Ridgeline</a></li>
+    <li class="observablehq-link"><a href="./Heatmap">Heatmap</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="visualization-3-licensed-drivers-registered-vehicles-and-crashes-over-time" tabindex="-1"><a class="observablehq-header-anchor" href="#visualization-3-licensed-drivers-registered-vehicles-and-crashes-over-time">🚗 Visualization 3: Licensed Drivers, Registered Vehicles &amp; Crashes Over Time</a></h1>
+<p>This connected scatter plot explores the relationship between total crashes and either licensed drivers or registered vehicles in Arizona over time. Use the toggle below to switch between <strong>Licensed Drivers</strong> and <strong>Registered Vehicles</strong>.</p>
+<div id="app"></div>
+<div class="observablehq observablehq--block"><!--:f33d0de0:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5bd8d23c:--></div>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./Barchart"><span>Bar chart</span></a><a rel="next" href="./Ridgeline"><span>Ridgeline</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T21:22:33">Feb 4, 2025</a>.</div>
+</footer>
+</div>
+</body>
+</html>
