@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.2">
+<title>Arizona Crash Reports Dashboard | Arizona Crash Report</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="modulepreload" href="./_observablehq/client.010ab10e.js">
+<link rel="modulepreload" href="./_observablehq/runtime.f168f711.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.a7574edc.js">
+<script type="module">
+
+import "./_observablehq/client.010ab10e.js";
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link observablehq-link-active"><a href="./">Arizona Crash Report</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./">Home</a></li>
+    <li class="observablehq-link"><a href="./map">Map</a></li>
+    <li class="observablehq-link"><a href="./Bar-chart">Bar chart</a></li>
+    <li class="observablehq-link"><a href="./ConnectedScatter">ConnectedScatter plot</a></li>
+    <li class="observablehq-link"><a href="./Ridgeline">Ridgeline</a></li>
+    <li class="observablehq-link"><a href="./Heatmap">Heatmap</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap');
+
+/* Dark Theme Styling */
+:root {
+  --primary-color: #ff9800;
+  --secondary-color: #03a9f4;
+  --text-color: white;
+  --background-color: #121212;
+}
+
+/* Page Background */
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: "Poppins", Arial, sans-serif;
+  text-align: center;
+}
+
+/* Navigation Menu */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.navbar a:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Hero Section with Arizona Crash Image */
+.hero {
+  padding: 5rem 0;
+  background-image: url("accident");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 10px;
+  margin: 20px auto;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  height: 300px;
+  position: relative;
+}
+
+/* Dark Overlay to Improve Text Readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/* Centered Title */
+.hero h1, .hero h2 {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  font-style: italic;
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Team Section */
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+
+.team-member {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 3rem;
+  border-radius: 12px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  border: 3px solid var(--primary-color);
+  transition: all 0.3s;
+}
+
+.team-member:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: scale(1.1);
+}
+</style>
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="./">🏠 Home</a>
+  <a href="./map">🗺️ Map</a>
+  <a href="./Bar-chart">📊 Bar Chart</a>
+  <a href="./ConnectedScatter">📈 Connected Scatter</a>
+  <a href="./Ridgeline">📉 Ridgeline</a>
+  <a href="./Heatmap">🔥 Heatmap</a>
+</div>
+<div class="hero">
+  <h1>Crash Trends in Arizona</h1>
+  <h2>Data-Driven Insights for Arizona Roads</h2>
+</div>
+<div class="team-container">
+  <div class="team-member">BILAL KHATEEB</div>
+</div>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="next" href="./map"><span>Map</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T14:46:38">Feb 4, 2025</a>.</div>
+</footer>
+</div>
+</body>
+</html>
