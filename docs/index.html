@@ -67,47 +67,61 @@ import "./_observablehq/client.90be1c3d.js";
   document.getElementById("chart").appendChild(chart);
 </script>
 <hr>
-<h2 id="test-2-display-first-5-rows-of-arizona-county-crashes" tabindex="-1"><a class="observablehq-header-anchor" href="#test-2-display-first-5-rows-of-arizona-county-crashes">📋 <strong>Test 2: Display First 5 Rows of "Arizona County Crashes"</strong></a></h2>
-<p>This test will load <strong>docs/data/Arizona county crashes.csv</strong> and show the first 5 rows.</p>
-<div id="csv-table"></div>
+<h2 id="test-2-console-log-first-5-rows-of-arizona-county-crashes" tabindex="-1"><a class="observablehq-header-anchor" href="#test-2-console-log-first-5-rows-of-arizona-county-crashes">📋 <strong>Test 2: Console Log First 5 Rows of "Arizona County Crashes"</strong></a></h2>
+<p>This test will <strong>attempt multiple ways</strong> to load <strong>docs/data/Arizona county crashes.csv</strong> and log the first 5 rows in the browser console.</p>
 <script type="module">
-  import { csv } from "https://cdn.jsdelivr.net/npm/d3-fetch@3/+esm";
-
-  // Load CSV file from GitHub Pages
-  const csvUrl = "./data/Arizona county crashes.csv";
-
   async function loadCsvData() {
-    try {
-      const data = await csv(csvUrl);
-      
-      // Take only the first 5 rows
-      const firstFiveRows = data.slice(0, 5);
-      
-      // Create table HTML
-      let tableHtml = "<table border='1' style='border-collapse:collapse; width: 100%;'>";
-      tableHtml += "<tr><th>Year</th><th>County</th><th>Total Crashes</th><th>Fatal Crashes</th><th>Injury Crashes</th><th>PDO Crashes</th><th>Killed</th><th>Injured</th></tr>";
-      
-      firstFiveRows.forEach(row => {
-        tableHtml += `<tr>
-          <td>${row.Year}</td>
-          <td>${row.county}</td>
-          <td>${row.crashes_n_total}</td>
-          <td>${row.crashes_n_fatal}</td>
-          <td>${row.crashes_n_injury}</td>
-          <td>${row.crashes_n_PDO}</td>
-          <td>${row.Killed}</td>
-          <td>${row.Injured}</td>
-        </tr>`;
-      });
+    console.log("📌 Starting CSV file load test...");
 
-      tableHtml += "</table>";
+    // Possible file locations for testing
+    const csvUrls = [
+      "./data/Arizona county crashes.csv", // ✅ Relative path (GitHub Pages)
+      "data/Arizona county crashes.csv", // ✅ Relative path (local testing)
+      "https://bilalkhateeb.github.io/Arizona-Crashes/data/Arizona county crashes.csv" // ✅ Absolute URL (GitHub Pages)
+    ];
 
-      // Insert into div
-      document.getElementById("csv-table").innerHTML = tableHtml;
-    } catch (error) {
-      document.getElementById("csv-table").innerHTML = "<p style='color:red;'>Error loading CSV file. Check the file path.</p>";
-      console.error("CSV Load Error:", error);
+    let csvData = null;
+
+    for (const csvUrl of csvUrls) {
+      try {
+        console.log(`🔍 Trying: ${csvUrl}`);
+
+        // Fetch CSV file
+        const response = await fetch(csvUrl);
+        if (!response.ok) throw new Error(`❌ Failed to load: ${csvUrl} (Status: ${response.status})`);
+
+        // Read text content
+        const csvText = await response.text();
+
+        // Parse CSV into an array of objects
+        csvData = csvText.split("\n").map(row => row.split(","));
+        console.log(`✅ Successfully loaded CSV from: ${csvUrl}`);
+
+        // Break loop if data loaded
+        break; 
+      } catch (error) {
+        console.warn(error.message);
+      }
     }
+
+    // If all attempts fail
+    if (!csvData) {
+      console.error("🚨 ERROR: All CSV load attempts failed! Check file path.");
+      return;
+    }
+
+    // Extract headers
+    const headers = csvData[0];
+
+    // Convert CSV array to an array of objects
+    const dataObjects = csvData.slice(1, 6).map(row => {
+      let obj = {};
+      row.forEach((value, index) => obj[headers[index]] = value);
+      return obj;
+    });
+
+    // Log first 5 rows
+    console.log("📊 First 5 rows of CSV:", dataObjects);
   }
 
   loadCsvData();
@@ -261,7 +275,7 @@ body {
 </main>
 <footer id="observablehq-footer">
 <nav><a rel="next" href="./map"><span>Map</span></a></nav>
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T18:21:55">Feb 4, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T18:35:48">Feb 4, 2025</a>.</div>
 </footer>
 </div>
 </body>
