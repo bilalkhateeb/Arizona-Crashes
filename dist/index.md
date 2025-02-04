@@ -137,10 +137,10 @@ body {
 <!-- Navigation Bar -->
 <div class="navbar">
   <a href="index.md">🏠 Home</a>
-  <a href="map.md">🗺️ Map</a>
-  <a href="Bar%20chart%20(small%20multiples).md">📊 Bar Chart</a>
-  <a href="ConnectedScatter.md">📈 Connected Scatter</a>
-  <a href="Ridgeline.md">📉 Ridgeline</a>
+  <a href="./map.md">🗺️ Map</a>
+  <a href="docs/Bar%20chart%20(small%20multiples).md">📊 Bar Chart</a>
+  <a href="/ConnectedScatter.md">📈 Connected Scatter</a>
+  <a href="/docs/Ridgeline.md">📉 Ridgeline</a>
   <a href="Heatmap.md">🔥 Heatmap</a>
 </div>
 
