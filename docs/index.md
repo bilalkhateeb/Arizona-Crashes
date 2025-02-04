@@ -140,7 +140,7 @@ body {
   <a href="/map.md">🗺️ Map</a>
   <a href="Barchart">📊 Bar Chart</a>
   <a href=".ConnectedScatter">📈 Connected Scatter</a>
-  <a href=".Ridgeline.md">📉 Ridgeline</a>
+  <a href="Ridgeline">📉 Ridgeline</a>
   <a href="Heatmap">🔥 Heatmap</a>
 </div>
 
