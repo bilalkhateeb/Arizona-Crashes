@@ -1,5 +1,5 @@
 ---
-title: "Arizona County Crash Comparison"
+title: "Arizona-Crashes"
 theme: dark
 toc: false
 ---
@@ -10,30 +10,31 @@ This is a test visualization using **Observable Plot** to check if the library l
 
 <div id="chart"></div>
 
-```js
-import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
+<script type="module">
+  import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
 
-// Sample data
-const data = [
-  { category: "A", value: 30 },
-  { category: "B", value: 80 },
-  { category: "C", value: 45 },
-  { category: "D", value: 60 },
-  { category: "E", value: 20 }
-];
+  // Sample data
+  const data = [
+    { category: "A", value: 30 },
+    { category: "B", value: 80 },
+    { category: "C", value: 45 },
+    { category: "D", value: 60 },
+    { category: "E", value: 20 }
+  ];
 
-// Create bar chart
-const chart = Plot.plot({
-  marks: [
-    Plot.barY(data, { x: "category", y: "value", fill: "steelblue" })
-  ],
-  width: 500,
-  height: 300
-});
+  // Create bar chart
+  const chart = Plot.plot({
+    marks: [
+      Plot.barY(data, { x: "category", y: "value", fill: "steelblue" })
+    ],
+    width: 500,
+    height: 300
+  });
 
-// Append chart to div
-document.getElementById("chart").appendChild(chart);
-```
+  // Append chart to div
+  document.getElementById("chart").appendChild(chart);
+</script>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap');
