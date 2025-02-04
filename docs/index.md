@@ -54,16 +54,16 @@ This is a test visualization using **Observable Plot** to check if the library l
   document.getElementById("chart").appendChild(chart);
 </script>
 
-```js
-// Import Plot from Observable (d3 is available globally)
-import * as Plot from "@observablehq/plot";
+## 📋 Test 2: CSV Data Loading with d3.csv
 
-// ===============================
-// Global Configurations & Helper Functions
-// ===============================
+This test will attempt to load your CSV file using **d3.csv** and print the first five rows to the browser console.
+
+<script type="module">
+  import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
+
 async function loadData() {
   try {
-    const data = await FileAttachment("data/Arizona.csv").csv({ typed: true });
+    const data = await FileAttachment("data/Arizona county crashes.csv").csv({ typed: true });
     console.log("CSV data loaded:", data);
     return data;
   } catch (e) {
@@ -71,13 +71,7 @@ async function loadData() {
     return [];
   }
 }
-loadData();
-```
-
-## 📋 Test 2: CSV Data Loading with d3.csv
-
-This test will attempt to load your CSV file using **d3.csv** and print the first five rows to the browser console.
-
+</script>
 
 ## Custom Styling
 
