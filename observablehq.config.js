@@ -6,7 +6,7 @@ export default {
   pages: [
     { name: "Home", path: "/" },
     { name: "Map", path: "/map" },
-    { name: "Bar chart", path: "/Bar-chart" },
+    { name: "Bar chart", path: "/Barchart" },
     { name: "ConnectedScatter plot", path: "/ConnectedScatter" },
     { name: "Ridgeline", path: "/Ridgeline" },
     { name: "Heatmap", path: "/Heatmap" }

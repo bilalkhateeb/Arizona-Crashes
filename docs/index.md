@@ -138,7 +138,7 @@ body {
 <div class="navbar">
   <a href="/">🏠 Home</a>
   <a href="/map.md">🗺️ Map</a>
-  <a href="Bar-chart">📊 Bar Chart</a>
+  <a href="Barchart">📊 Bar Chart</a>
   <a href=".ConnectedScatter">📈 Connected Scatter</a>
   <a href=".Ridgeline.md">📉 Ridgeline</a>
   <a href="Heatmap">🔥 Heatmap</a>
