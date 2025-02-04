@@ -71,6 +71,7 @@ async function loadData() {
     return [];
   }
 }
+loadData()
 </script>
 
 ## Custom Styling
