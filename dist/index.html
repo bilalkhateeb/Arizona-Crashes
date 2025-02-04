@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.2">
+<title>Arizona-Crashes | Arizona Crash Report</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-near-midnight.d49e655d.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-near-midnight.d49e655d.css">
+<link rel="modulepreload" href="./_observablehq/client.90be1c3d.js">
+<link rel="modulepreload" href="./_observablehq/runtime.f168f711.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.a7574edc.js">
+<link rel="modulepreload" href="./_node/@observablehq/plot@0.6.16/index.9b55ffb7.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/407f7a1f.js">
+<link rel="modulepreload" href="./_node/d3@7.9.0/index.53f82e1f.js">
+<link rel="modulepreload" href="./_node/isoformat@0.2.1/index.0882e9d9.js">
+<link rel="modulepreload" href="./_node/interval-tree-1d@1.0.4/index.18b49a7e.js">
+<link rel="modulepreload" href="./_node/d3-array@3.2.4/index.b70e7922.js">
+<link rel="modulepreload" href="./_node/d3-axis@3.0.0/index.34ded868.js">
+<link rel="modulepreload" href="./_node/d3-brush@3.0.0/index.0d1ab9e9.js">
+<link rel="modulepreload" href="./_node/d3-chord@3.0.1/index.eb7a3f59.js">
+<link rel="modulepreload" href="./_node/d3-color@3.1.0/index.e8c126ff.js">
+<link rel="modulepreload" href="./_node/d3-contour@4.0.2/index.c2c2e765.js">
+<link rel="modulepreload" href="./_node/d3-delaunay@6.0.4/index.46144837.js">
+<link rel="modulepreload" href="./_node/d3-dispatch@3.0.1/index.be49ca5f.js">
+<link rel="modulepreload" href="./_node/d3-drag@3.0.0/index.b110a7c7.js">
+<link rel="modulepreload" href="./_node/d3-dsv@3.0.1/index.48418e2e.js">
+<link rel="modulepreload" href="./_node/d3-ease@3.0.1/index.09153f73.js">
+<link rel="modulepreload" href="./_node/d3-fetch@3.0.1/index.089dc2e0.js">
+<link rel="modulepreload" href="./_node/d3-force@3.0.0/index.a53c353f.js">
+<link rel="modulepreload" href="./_node/d3-format@3.1.0/index.913a01e3.js">
+<link rel="modulepreload" href="./_node/d3-geo@3.1.1/index.94773a7e.js">
+<link rel="modulepreload" href="./_node/d3-hierarchy@3.1.2/index.7d9b63a7.js">
+<link rel="modulepreload" href="./_node/d3-interpolate@3.0.1/index.3b07c751.js">
+<link rel="modulepreload" href="./_node/d3-path@3.1.0/index.c2b3c473.js">
+<link rel="modulepreload" href="./_node/d3-polygon@3.0.1/index.32c3d834.js">
+<link rel="modulepreload" href="./_node/d3-quadtree@3.0.1/index.e9fed2eb.js">
+<link rel="modulepreload" href="./_node/d3-random@3.0.1/index.fd2cc361.js">
+<link rel="modulepreload" href="./_node/d3-scale@4.0.2/index.9802f328.js">
+<link rel="modulepreload" href="./_node/d3-scale-chromatic@3.1.0/index.05a6a5dd.js">
+<link rel="modulepreload" href="./_node/d3-selection@3.0.0/index.31e0394d.js">
+<link rel="modulepreload" href="./_node/d3-shape@3.2.0/index.688fc497.js">
+<link rel="modulepreload" href="./_node/d3-time@3.1.0/index.ae6ab93d.js">
+<link rel="modulepreload" href="./_node/d3-time-format@4.1.0/index.4b8e4965.js">
+<link rel="modulepreload" href="./_node/d3-timer@3.0.1/index.5ac82948.js">
+<link rel="modulepreload" href="./_node/d3-transition@3.0.1/index.2448c0da.js">
+<link rel="modulepreload" href="./_node/d3-zoom@3.0.0/index.6b0a6cc1.js">
+<link rel="modulepreload" href="./_node/binary-search-bounds@2.0.5/index.add414e4.js">
+<link rel="modulepreload" href="./_node/internmap@2.0.3/index.4106013c.js">
+<link rel="modulepreload" href="./_node/delaunator@5.0.1/index.70ae1478.js">
+<link rel="modulepreload" href="./_node/robust-predicates@3.0.2/index.bdc459cc.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.90be1c3d.js";
+import {registerFile} from "./_observablehq/stdlib.a7574edc.js";
+
+registerFile("./data/Arizona.csv", {"name":"./data/Arizona.csv","mimeType":"text/csv","path":"./_file/data/Arizona.08230ab6.csv","lastModified":1738666257000,"size":14714});
+
+define({id: "2bfc8a45", inputs: ["FileAttachment"], outputs: ["Plot","loadData"], body: async (FileAttachment) => {
+const Plot = await import("./_node/@observablehq/plot@0.6.16/index.9b55ffb7.js");
+// Import Plot from Observable (d3 is available globally)
+
+// ===============================
+// Global Configurations & Helper Functions
+// ===============================
+async function loadData() {
+  try {
+    const data = await FileAttachment("./data/Arizona.csv").csv({ typed: true });
+    console.log("CSV data loaded:", data);
+    return data;
+  } catch (e) {
+    console.error("Error loading CSV file:", e);
+    return [];
+  }
+}
+loadData();
+return {Plot,loadData};
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link observablehq-link-active"><a href="./">Arizona Crash Report</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./">Home</a></li>
+    <li class="observablehq-link"><a href="./map">Map</a></li>
+    <li class="observablehq-link"><a href="./Barchart">Bar chart</a></li>
+    <li class="observablehq-link"><a href="./ConnectedScatter">ConnectedScatter plot</a></li>
+    <li class="observablehq-link"><a href="./Ridgeline">Ridgeline</a></li>
+    <li class="observablehq-link"><a href="./Heatmap">Heatmap</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="crash-trends-in-arizona" tabindex="-1"><a class="observablehq-header-anchor" href="#crash-trends-in-arizona">Crash Trends in Arizona</a></h1>
+<h2 id="navigation-bar" tabindex="-1"><a class="observablehq-header-anchor" href="#navigation-bar">Navigation Bar</a></h2>
+<div class="navbar">
+  <a href="./">🏠 Home</a>
+  <a href="./map">🗺️ Map</a>
+  <a href="./Barchart">📊 Bar Chart</a>
+  <a href="./ConnectedScatter">📈 Connected Scatter</a>
+  <a href="./Ridgeline">📉 Ridgeline</a>
+  <a href="./Heatmap">🔥 Heatmap</a>
+</div>
+<h2 id="hero-section" tabindex="-1"><a class="observablehq-header-anchor" href="#hero-section">Hero Section</a></h2>
+<div class="hero">
+  <h1>Crash Trends in Arizona</h1>
+  <h2>Data-Driven Insights for Arizona Roads</h2>
+</div>
+<h2 id="simple-observable-test" tabindex="-1"><a class="observablehq-header-anchor" href="#simple-observable-test">📊 Simple Observable Test</a></h2>
+<p>This is a test visualization using <strong>Observable Plot</strong> to check if the library loads properly.</p>
+<div id="chart"></div>
+<script type="module">
+  import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
+
+  // Sample data for testing
+  const data = [
+    { category: "A", value: 30 },
+    { category: "B", value: 80 },
+    { category: "C", value: 45 },
+    { category: "D", value: 60 },
+    { category: "E", value: 20 }
+  ];
+
+  // Create bar chart
+  const chart = Plot.plot({
+    marks: [
+      Plot.barY(data, { x: "category", y: "value", fill: "steelblue" })
+    ],
+    width: 500,
+    height: 300
+  });
+
+  document.getElementById("chart").appendChild(chart);
+</script>
+<div class="observablehq observablehq--block"><!--:2bfc8a45:--></div>
+<h2 id="test-2-csv-data-loading-with-d3-csv" tabindex="-1"><a class="observablehq-header-anchor" href="#test-2-csv-data-loading-with-d3-csv">📋 Test 2: CSV Data Loading with d3.csv</a></h2>
+<p>This test will attempt to load your CSV file using <strong>d3.csv</strong> and print the first five rows to the browser console.</p>
+<h2 id="custom-styling" tabindex="-1"><a class="observablehq-header-anchor" href="#custom-styling">Custom Styling</a></h2>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap');
+
+/* Dark Theme Styling */
+:root {
+  --primary-color: #ff9800;
+  --secondary-color: #03a9f4;
+  --text-color: white;
+  --background-color: #121212;
+}
+
+/* Page Background */
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: "Poppins", Arial, sans-serif;
+  text-align: center;
+}
+
+/* Navigation Menu */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.navbar a:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Hero Section with Background Image */
+/* Update the background image URL with correct filename and extension */
+.hero {
+  padding: 5rem 0;
+  background-image: url("images/accident.jpg"); /* Example path: adjust as needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 10px;
+  margin: 20px auto;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  height: 300px;
+  position: relative;
+}
+
+/* Dark Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/* Hero Titles */
+.hero h1, .hero h2 {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  font-style: italic;
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Team Section */
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+
+.team-member {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 3rem;
+  border-radius: 12px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  border: 3px solid var(--primary-color);
+  transition: all 0.3s;
+}
+
+.team-member:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: scale(1.1);
+}
+</style>
+<h2 id="team-section" tabindex="-1"><a class="observablehq-header-anchor" href="#team-section">Team Section</a></h2>
+<div class="team-container">
+  <div class="team-member">BILAL KHATEEB</div>
+</div>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="next" href="./map"><span>Map</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-04T20:40:05">Feb 4, 2025</a>.</div>
+</footer>
+</div>
+</body>
+</html>

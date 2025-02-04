@@ -33,7 +33,7 @@ This is a test visualization using **Observable Plot** to check if the library l
 <script type="module">
   import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
 
-  // Sample data
+  // Sample data for testing
   const data = [
     { category: "A", value: 30 },
     { category: "B", value: 80 },
@@ -51,39 +51,33 @@ This is a test visualization using **Observable Plot** to check if the library l
     height: 300
   });
 
-  // Append chart to div
   document.getElementById("chart").appendChild(chart);
 </script>
 
-## 📋 Test 2: CSV Data Loading
+```js
+// Import Plot from Observable (d3 is available globally)
+import * as Plot from "@observablehq/plot";
 
-This test will attempt to load and log the first five rows of your CSV file using **d3.csv**.
-
-<script type="module">
-  import { csv } from "https://cdn.jsdelivr.net/npm/d3-fetch@3/+esm";
-  import { autoType } from "https://cdn.jsdelivr.net/npm/d3-dsv@3/+esm";
-  
-  async function loadData() {
-    try {
-      console.log("📌 Attempting to load CSV file using d3.csv...");
-      // Ensure the CSV file is located at 'data/Arizona.csv' relative to this file
-      const data = await csv("data/Arizona.csv", autoType);
-      console.log("CSV data loaded:", data);
-      
-      if (!data || data.length === 0) {
-        console.warn("No data loaded.");
-        return;
-      }
-      
-      console.log("✅ CSV file loaded successfully!");
-      console.log("🔹 First 5 rows:", data.slice(0, 5));
-    } catch (e) {
-      console.error("🚨 Error loading CSV file:", e);
-    }
+// ===============================
+// Global Configurations & Helper Functions
+// ===============================
+async function loadData() {
+  try {
+    const data = await FileAttachment("data/Arizona.csv").csv({ typed: true });
+    console.log("CSV data loaded:", data);
+    return data;
+  } catch (e) {
+    console.error("Error loading CSV file:", e);
+    return [];
   }
-  
-  loadData();
-</script>
+}
+loadData();
+```
+
+## 📋 Test 2: CSV Data Loading with d3.csv
+
+This test will attempt to load your CSV file using **d3.csv** and print the first five rows to the browser console.
+
 
 ## Custom Styling
 
@@ -135,9 +129,10 @@ body {
 }
 
 /* Hero Section with Background Image */
+/* Update the background image URL with correct filename and extension */
 .hero {
   padding: 5rem 0;
-  background-image: url("accident");
+  background-image: url("images/accident.jpg"); /* Example path: adjust as needed */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -155,7 +150,7 @@ body {
   position: relative;
 }
 
-/* Dark Overlay to Improve Text Readability */
+/* Dark Overlay */
 .hero::before {
   content: "";
   position: absolute;
@@ -167,7 +162,7 @@ body {
   border-radius: 10px;
 }
 
-/* Centered Title */
+/* Hero Titles */
 .hero h1, .hero h2 {
   position: relative;
   z-index: 1;
