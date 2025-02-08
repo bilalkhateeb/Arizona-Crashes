@@ -23,7 +23,7 @@ toc: true
 <div style="width:90%; margin-top: 0px; margin-left: 20px; font-size:17px">
   Arizona’s roads weave through a landscape as diverse as its counties—from the
   bustling streets of Phoenix in Maricopa County to the remote highways cutting
-  through the Navajo Nation in Apache County. Yet, each county tells a different
+  through the Navajo Nation and Apache County. Yet, each county tells a different
   tale when it comes to traffic safety, with its own unique challenges. As we
   delve into the data, we uncover stories of policy changes, infrastructure
   investments, and community responses that have shaped the safety of Arizona’s
@@ -652,7 +652,7 @@ loadCrashData();
 ## Urban vs. Rural
 
 <div style="width: 90%; margin-left: 20px; margin-top: 25px; margin-bottom: 30px; font-size:17px">
-Driving through Arizona tells two different stories. In the bustling streets of Phoenix and Tucson, honking horns and stop-and-go traffic create an environment where crashes are frequent but rarely fatal. Meanwhile, on the long, open highways of Apache and Gila Counties, a single moment of distraction can turn deadly, with emergency responders sometimes miles away.
+In the bustling streets of Phoenix and Tucson, honking horns and stop-and-go traffic create an environment where crashes are frequent but rarely fatal. Meanwhile, on the long, open highways of Apache and Gila Counties, a single moment of distraction can turn deadly, with emergency responders sometimes miles away.
 </div>
 
 <div id="Barchart"></div>
