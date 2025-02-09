@@ -1,5 +1,6 @@
 ---
 title: "Arizona Crash"
+theme: dark
 toc: false
 ---
 
@@ -33,17 +34,16 @@ body {
 .hero {
   position: relative;
   width: 90%;
-  max-width: 1000px; /* Ensures it doesn't get too large on big screens */
-  margin: 20px auto;
+  max-width: 900px;
+  height: 450px;
+  margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
-  transition: width 0.3s ease-in-out; /* Smooth transition when resizing */
 }
 
 /* 🌄 Hero Image */
 .hero-image {
   width: 100%;
-  display: block;
   border-radius: 10px;
   object-fit: cover;
 }
@@ -51,10 +51,7 @@ body {
 /* 🔲 Overlay (Dark Background for Readability) */
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0; /* Shorthand for top: 0; left: 0; width: 100%; height: 100%; */
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
@@ -69,13 +66,11 @@ body {
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 10px;
-  transition: font-size 0.3s ease-in-out;
 }
 
 .hero-overlay h2 {
   font-size: 2rem;
   font-style: italic;
-  transition: font-size 0.3s ease-in-out;
 }
 
 /* 👤 Team Section */
@@ -83,19 +78,19 @@ body {
   display: flex;
   justify-content: center;
   gap: 3rem;
-  margin: 3rem 0;
+  margin-top: 20px;
 }
 
 .team-member {
   background: rgba(255, 255, 255, 0.1);
-  padding: 1rem 3rem;
+  padding: 0.5rem 3rem;
   border-radius: 12px;
   font-size: 2rem;
   font-weight: bold;
   color: var(--primary-color);
   text-transform: uppercase;
   border: 3px solid var(--primary-color);
-  transition: all 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .team-member:hover {
@@ -106,17 +101,11 @@ body {
 
 /* 📌 RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
-  .hero {
-    width: 95%;
-  }
   .hero-overlay h1 { font-size: 3.5rem; }
   .hero-overlay h2 { font-size: 1.8rem; }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    width: 100%;
-  }
   .hero-overlay h1 { font-size: 3rem; }
   .hero-overlay h2 { font-size: 1.5rem; }
 }
@@ -141,5 +130,4 @@ body {
   <div class="team-member">BILAL KHATEEB
     <div style="font-size:25px; color:white">s5835711</div>
   </div>
-  
 </div>
