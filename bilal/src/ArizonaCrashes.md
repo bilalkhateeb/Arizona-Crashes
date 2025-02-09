@@ -11,6 +11,7 @@ toc: true
     transform-origin: top center;
     width: 95%;  /* Compensate for shrinkage */
     min-width: 1024px;
+    word-spacing: 3px;
   }
 </style>
 
@@ -624,14 +625,16 @@ loadCrashData();
 
 ```html
 <div style="width: 90%; margin-top: 20px; margin-left: 20px; font-size:17px">
-  Arizona’s roads reflect unique safety challenges. Maricopa County improved
-  congestion with hands-free driving laws (2021) and light rail expansion
-  (2008-2022). Pima County adopted Vision Zero (2020) and stricter motorcycle
-  safety laws (2019). Coconino County invested in road maintenance (2018) and
-  wildlife crossings (2022) to reduce crashes. Apache County enhanced emergency
-  response (2017) and DUI awareness (2019). Gila County addressed truck-related
-  crashes and ATV accidents with stricter safety measures (2021). Between
-  2008-2010, crashes dropped due to the economic downturn, better enforcement,
+  Arizona’s roads reflect unique safety challenges. <b>Maricopa</b> County improved
+  congestion with <b>hands-free</b> driving laws (2021) and light rail expansion
+  (2008-2022). <b>Pima County</b> adopted <b>Vision Zero (2020), a strategy to eliminate 
+    traffic deaths and severe injuries through safer road design and policies,
+  </b> and stricter motorcycle safety laws (2019), but its impact is yet to be seen. 
+  <b>Coconino County</b> invested in <b>road maintenance (2018)</b> and
+  <b>wildlife crossings (2022)</b> to reduce crashes. Apache County enhanced <b>emergency
+  response (2017)</b> and <b>DUI awareness (2019)</b>. <b>Gila County</b> addressed truck-related
+  crashes and ATV accidents with <b>stricter safety measures (2021)</b>. Between
+  <b>2008-2010</b>, crashes dropped due to the <b>economic downturn</b>, better enforcement,
   and improved road safety. Statewide efforts like highway expansions
   (2015-2022), medical response improvements (2016), and DUI crackdowns (2018)
   have shown mixed results.
@@ -991,19 +994,18 @@ function updateCharts(selectedYear, crashData, chartsDiv, fixedCountyOrder) {
   <b>Maricopa and Pima</b> experience the highest number of crashes due to dense
   traffic, frequent stop-and-go movement, and a rising number of distracted
   drivers. However, improved infrastructure, law enforcement, and traffic
-  regulations, such as the Hands-Free Law (2021), have helped mitigate
-  fatalities despite high crash volumes.<br />
+  regulations, have helped mitigate fatalities despite high crash volumes.<br/>
 
-  Rural counties, including <b>Apache, Navajo, and Gila,</b> face the opposite
-  challenge: fewer crashes but a disproportionately high fatality rate. The lack
+  <b>Rural counties, including Apache, Navajo, Graham and Gila,</b> face the opposite
+  challenge: fewer crashes but a disproportionately <b>high fatality rate</b>. The lack
   of immediate emergency response, long highway stretches, and high-speed travel
-  contribute to severe crash outcomes. Efforts like enhanced DUI enforcement
-  (2018) and road safety investments (2015-2022) have aimed to improve rural
-  crash survival rates, but challenges persist.<br />
+  contribute to severe crash outcomes. Efforts like <b>enhanced DUI enforcement</b>
+  (2018) and <b>road safety investments (2015-2022)</b> have aimed to improve rural
+  crash survival rates, but challenges persist.<br/>
 
   Tourist-heavy regions like <b>Coconino and Yavapai</b> Counties also see
   spikes in crash rates due to seasonal traffic, winter road hazards, and
-  wildlife collisions. Wildlife overpasses, introduced in 2022, have helped
+  wildlife collisions. <b>Wildlife overpasses, introduced in 2022</b>, have helped
   reduce animal-vehicle accidents, but icy conditions remain a major hazard.
   <div
     style="font-size: 17px; font-style: italic; color: gray; border-left: 4px solid #ccc; padding-left: 10px; padding-top: 10px"
@@ -1020,7 +1022,9 @@ function updateCharts(selectedYear, crashData, chartsDiv, fixedCountyOrder) {
 ## More Drivers, More Roads, More Challenges
 
 <div style="width: 90%; margin-left: 20px; margin-top: 25px; margin-bottom: 30px; font-size:17px">
-Arizona’s roads are a reflection of its evolution—shaped by booming cities, economic highs and lows, and world-changing events that influenced the way people drive. Between 1997 and 2023, the state saw a relentless rise in licensed drivers and registered vehicles.
+Arizona’s roads are a reflection of its evolution—shaped by booming cities, economic highs and lows, 
+and world-changing events that influenced the way people drive. 
+Between 1997 and 2023, the state saw a relentless rise in licensed drivers and registered vehicles.
 </div>
 
 <div id="connectedScatter"></div>
@@ -1266,11 +1270,21 @@ import * as Plot from "@observablehq/plot";
 
 ```html
 <div style="width: 90%; margin-left: 20px; margin-top: 50px; font-size:17px">
-The early 2000s brought a surge in vehicle ownership due to economic prosperity and migration, leading to more traffic congestion and crashes. However, the 2008 financial crisis caused a dip as fewer people could afford cars or insurance, leading to a temporary decline in crashes. By 2011-2019, economic recovery and infrastructure expansions, like the Loop 202 and Loop 303 projects (major freeway expansions in the Phoenix metropolitan area to improve connectivity and reduce congestion), encouraged more drivers on the road, which also resulted in fluctuating crash rates.
-
-The COVID-19 pandemic (2020-2021) led to a sharp decline in vehicle registrations as lockdowns and remote work limited travel, causing a significant drop in crashes. However, post-pandemic 2022-2023 saw a rapid rebound in registrations and licensing, resulting in increased road activity and a rise in crashes due to higher traffic volumes and commuting patterns returning to pre-pandemic levels.
-
-External factors like safety laws (Hands-Free Law, 2021), DUI enforcement (2018), and highway improvements (2015-2022) played key roles in shaping driver trends. While safety laws have helped curb distracted driving-related accidents, increased vehicle numbers continue to challenge road safety. As Arizona continues to expand, balancing vehicle growth with safety measures remains crucial for the future of road travel.
+The early 2000s brought a surge in vehicle ownership due to economic prosperity and migration, 
+leading to more traffic congestion and crashes. 
+However, the <b>2008 financial crisis</b> caused a dip as fewer people could afford cars or insurance, 
+leading to a temporary decline in crashes. By <b>2011-2019, economic recovery</b> and infrastructure expansions, 
+like the Loop 202 and Loop 303 projects (major freeway expansions in the Phoenix metropolitan area 
+to improve connectivity and reduce congestion), encouraged more drivers on the road, 
+which also resulted in fluctuating crash rates. The <b>COVID-19 pandemic (2020-2021)</b> led to a sharp 
+decline in vehicle registrations as lockdowns and remote work limited travel, causing a significant drop in crashes. 
+However, post-pandemic 2022-2023 saw a rapid rebound in registrations and licensing, 
+resulting in increased road activity and a rise in crashes due to higher traffic volumes 
+and commuting patterns returning to pre-pandemic levels. External factors like safety laws (Hands-Free Law, 2021), 
+DUI enforcement (2010 - 2018), and highway improvements (2015-2022) played key roles in <b>shaping driver trends</b>. 
+While safety laws have helped curb distracted driving-related accidents, increased vehicle numbers continue 
+to challenge road safety. As Arizona continues to expand, balancing vehicle growth with safety 
+measures remains crucial for the future of road travel.
   <div
     style="font-size: 17px; font-style: italic; color: gray; border-left: 4px solid #ccc; padding-left: 10px; padding-top: 10px"
   >
@@ -1285,7 +1299,10 @@ External factors like safety laws (Hands-Free Law, 2021), DUI enforcement (2018)
 ## Young, Fast, Drunk, and Dangerous
 
 <div style="width: 90%; margin-left: 20px; margin-top: 25px; margin-bottom: 30px; font-size:17px">
-The roads of Arizona reveal a compelling history—one that unfolds through the statistics of traffic incidents, shaped by age, alcohol use, and the policies that have evolved over time. For many Arizonans, the first exposure to driving begins in their teenage years. This period, marked by inexperience, overconfidence, and frequent distractions, contributes to the disproportionately high number of crashes.
+The roads of Arizona reveal a compelling history—one that unfolds through the statistics of traffic incidents, 
+shaped by age, alcohol use, and the policies that have evolved over time. For many Arizonans, 
+the first exposure to driving begins in their teenage years. This period, marked by inexperience, overconfidence, 
+and frequent distractions, contributes to the disproportionately high number of crashes.
 </div>
 
 <div id="Ridgeline"></div>
@@ -1942,15 +1959,24 @@ loadDataAndRender();
 
 ```html
 <div style="width: 90%; margin-left: 20px; margin-top: 50px; font-size:17px">
-In the late 1990s and early 2000s, young drivers in Arizona faced significantly high crash rates, with statistics peaking in the early 2000s. This increase in accidents was primarily attributed to inexperience and risk-taking behaviors among young adults. In response, the state implemented the Graduated Driver Licensing (GDL) program in 2000, introducing restrictions such as nighttime driving limitations and passenger restrictions to provide young drivers with a safer learning environment.
-
-Following the introduction of GDL laws, Arizona witnessed a gradual decline in teenage crash rates, particularly after 2010. However, another contributing factor was the 2008-2010 economic recession, which likely led to fewer young drivers on the road due to financial constraints. As a result, the number of crashes naturally declined during this period.
-
-Despite these improvements, new challenges emerged after 2015, particularly due to smartphone distractions. The use of mobile devices while driving contributed to fluctuations in crash rates. Arizona enforced cell phone bans in 2021 to reduce distractions and improve road safety.
-
-Another persistent issue has been alcohol-related crashes, which peak among drivers in their twenties, particularly after the age of 21. This trend aligns with the legal drinking age where Arizonans young adults gain access to alcohol at this age. Newly legal drinkers often engage in riskier behaviors, including impaired driving. Arizona has some of the strictest DUI (Driving Under the Influence) laws in the country, enforcing zero-tolerance policies for drivers under 21 and imposing severe penalties for DUI offenses. However, despite these regulations, drivers in 20s of their age continue to have a high incidence of alcohol-related crashes.
-
-As individuals gain more driving experience and develop a greater sense of responsibility in their 30s, crash rates steadily decline, suggesting that maturity and experience play a crucial role in road safety. While young drivers face risks due to inexperience, older drivers (65 and older) encounter challenges related to physical and cognitive decline. To address this, Arizona introduced senior driving assessments in 2016, aiming to balance elders independence with road safety.
+In the late 1990s and early 2000s, young drivers in Arizona faced significantly high crash rates, with statistics <b>peaking in the early 2000s</b>. 
+This increase in accidents was primarily attributed to inexperience and risk-taking behaviors among young adults. 
+In response, the state implemented the <b>Graduated Driver Licensing (GDL) program in 2000, introducing restrictions 
+such as nighttime driving limitations and passenger restrictions</b> to provide young drivers with a safer learning environment.
+Following the introduction of GDL laws, Arizona witnessed a <b>gradual decline in teenage crash rates</b>, particularly after 2010. 
+However, another contributing factor was the 2008-2010 economic recession, which likely led to fewer young drivers on the road due to financial constraints. 
+As a result, the number of crashes naturally declined during this period. Despite these improvements, new challenges emerged after 2015, 
+particularly due to <b>smartphone distractions</b>. The use of mobile devices while driving contributed to fluctuations in crash rates. 
+Arizona enforced <b>cell phone bans in 2021</b> to reduce distractions and improve road safety. Another persistent issue has been alcohol-related crashes, 
+which peak among drivers in their twenties, particularly <b>after the age of 21</b>. This trend aligns with the legal drinking age 
+where <b>Arizonans young adults gain access to alcohol at this age (21 years old)</b>. Newly legal drinkers often engage in riskier behaviors, 
+including impaired driving. Arizona has some of the strictest DUI (Driving Under the Influence) laws in the country, enforcing zero-tolerance policies 
+for drivers under 21 and imposing severe penalties for DUI offenses. However, despite these regulations, 
+drivers in 20s of their age continue to have a high incidence of alcohol-related crashes.
+As individuals gain more driving experience and develop a greater sense of responsibility <b>in their 30s, crash rates steadily decline</b>, 
+suggesting that maturity and experience play a crucial role in road safety. While young drivers face risks due to inexperience, 
+older drivers (65 and older)</b> encounter challenges related to physical and cognitive decline. To address this, 
+Arizona introduced <b>senior driving assessments in 2016</b>, aiming to balance elders independence with road safety.
   <div
     style="font-size: 17px; font-style: italic; color: gray; border-left: 4px solid #ccc; padding-left: 10px; padding-top: 10px">
 Sources: Arizona Department of Transportation https://azdot.gov - National Highway Traffic Safety Administration https://www.nhtsa.gov - Governors Highway Safety Association https://www.ghsa.org
@@ -2299,9 +2325,11 @@ import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+e
 
 ```html
 <div style="width: 90%; margin-left: 20px; margin-top: 50px; font-size:17px">
-Every day at 3 PM, Arizona’s roads get busy fast. Schools let out, offices close, and highways fill with rushed and impatient drivers. Rear-end crashes, side swipes, and intersection accidents happen as traffic builds up. By 5–6 PM, the roads are packed, and even a small mistake can cause a crash.
+Every day <b>at 3 PM</b>, Arizona’s roads get busy fast. Schools let out, offices close, and highways fill with rushed and impatient drivers. 
+Rear-end crashes, side swipes, and intersection accidents happen as traffic builds up. <b>By 5–6 PM, the roads are packed, and even a small mistake can cause a crash</b>.
 
-<br>Then comes the weekend,a whole new kind of rush. Fridays and Saturdays bring partygoers, and sports fans. Weekends further amplify this risk, as alcohol consumption, late-night social events, and reckless speeding result in more deadly crashes. 
+<br>Then comes the weekend,a whole new kind of rush. <b>Fridays and Saturdays bring partygoers, and sports fans</b>. Weekends further amplify this risk, 
+as <b>alcohol consumption</b>, late-night social events, and reckless speeding result in more deadly crashes. 
 While weekdays show a steadier crash rate due to predictable commuter patterns, weekends introduce an unpredictable mix of high-risk behaviors.
 
 <br>From weekday traffic jams to weekend risks, Arizona’s roads show how people move—and sometimes, how things go wrong.
